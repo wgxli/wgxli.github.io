@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Trigonometric Identities</title>
+
+<script src="/js/modernizr.custom.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/deck/core/deck.core.js"></script>
+
+<link rel="stylesheet" media="screen" href="/deck/core/deck.core.css">
+<link rel="stylesheet" media="screen" href="/deck/extensions/goto/deck.goto.css">
+<link rel="stylesheet" media="screen" href="/deck/extensions/menu/deck.menu.css">
+<link rel="stylesheet" media="screen" href="/deck/extensions/navigation/deck.navigation.css">
+<link rel="stylesheet" media="screen" href="/deck/extensions/status/deck.status.css">
+<link rel="stylesheet" media="screen" href="/deck/extensions/scale/deck.scale.css">
+
+<script src="/deck/extensions/menu/deck.menu.js"></script>
+<script src="/deck/extensions/goto/deck.goto.js"></script>
+<script src="/deck/extensions/status/deck.status.js"></script>
+<script src="/deck/extensions/navigation/deck.navigation.js"></script>
+<script src="/deck/extensions/scale/deck.scale.js"></script>
+
+<link rel="stylesheet" media="screen" href="/deck/themes/style/web-2.0.css">
+<link rel="stylesheet" media="screen" href="/deck/themes/transition/horizontal-slide.css">
+<link rel="stylesheet" media="print" href="/deck/core/print.css">
+</head>
+
+<body>
+<div class="deck-container">
+	<section class="slide">
+		<h1>Slide</h1>
+	</section>
+
+	<section class="slide">
+		<h1>Content</h1>
+	</section>
+
+	<section class="slide">
+		<h1>Here</h1>
+	</section>
+
+	<div aria-role="navigation">
+		<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+		<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+	</div>
+
+	<p class="deck-status" aria-role="status">
+		<span class="deck-status-current"></span>
+		/
+		<span class="deck-status-total"></span>
+	</p>
+
+	<form action="." method="get" class="goto-form">
+		<label for="goto-slide">Go to slide:</label>
+		<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+		<datalist id="goto-datalist"></datalist>
+		<input type="submit" value="Go">
+	</form>
+</div>
+
+<script>$(function() {$.deck('.slide');});</script>
+</body>
+</html>
