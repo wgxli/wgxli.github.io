@@ -1,5 +1,5 @@
 var raw_canvas = $('#geometric-derivation');
-var canvas = new Canvas(raw_canvas, [500, 250], 200);
+var canvas = new Canvas(raw_canvas, [250, 450], 500);
 var diagram = new Diagram(canvas);
 
 // Outline
@@ -10,8 +10,8 @@ diagram.add_click(draw_diagram);
 //diagram.add_step(animate);
 
 // Constants
-var ALPHA = 0.4;
-var BETA = 0.2;
+var ALPHA = 0.6;
+var BETA = 0.4;
 
 // Variables
 var alpha = constant_variable(0);
@@ -51,7 +51,10 @@ function draw_base() {
 
 	vertical.end.animate_to(foot);
 	horizontal.end.animate_to(foot);
-	cevian.end.animate_to(new Vector(gamma.cosine(), beta.sine()));
+
+	var cevian_length = constant_variable(1);
+	cevian.end = polar(beta, cevian_length);
+	cevian_length.animate_to(Math.cos(gamma.value()) / Math.cos(beta.value()));
 }
 
 function draw_diagram() {
