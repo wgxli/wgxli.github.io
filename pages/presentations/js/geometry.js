@@ -1,41 +1,19 @@
-// Vectors
-function Vector(x, y) {
-	this.x = x;
-	this.y = y;
-}
-
-Vector.prototype.value = function() {
-	return [this.x.value(), this.y.value()];
-}
-
-Vector.prototype.copy = function() {
-	return new Vector(this.x.copy(), this.y.copy());
-}
-
-Vector.prototype.scale = function(factor) {
-	return new Vector(this.x.scale(factor), this.y.scale(factor));
-}
-
-function polar(angle, magnitude) {
-	if (magnitude == undefined) {magnitude = constant_variable(1);}
-	return new Vector(angle.cosine().scale(magnitude), angle.sine().scale(magnitude));
-}
-
-function constant_vector(x, y) {
-	return new Vector(constant_variable(x), constant_variable(y));
-}
-
-Vector.prototype.animate_to = function(other) {
-	this.x.animate_to(other.x.value());
-	this.y.animate_to(other.y.value());
-}
-
-ORIGIN = new Vector(constant_variable(0), constant_variable(0));
-
 // Lines
-function Line(start, end) {
+function Line(start, end, color) {
+	if (color == undefined) {color = WHITE.copy();}
 	this.start = start;
 	this.end = end;
+	this.color = color;
+}
+
+Line.prototype.isolate = function() {
+	this.start = this.start.copy();
+	this.end = this.end.copy();
+	this.color = this.color.copy();
+}
+
+Line.prototype.copy = function() {
+	return new Line(this.start.copy(), this.end.copy(), this.color.copy());
 }
 
 Line.prototype.value = function() {
@@ -43,5 +21,66 @@ Line.prototype.value = function() {
 }
 
 Line.prototype.draw = function(canvas) {
-	canvas.line(this.start.value(), this.end.value());
+	canvas.line(this.start.value(), this.end.value(), this.color.value());
+}
+
+Line.prototype.toString = function() {
+	return 'Line(' + this.start.toString() + ', ' + this.end.toString() + ')';
+}
+
+// Utilities
+Line.prototype.midpoint = function() {
+	var self = this;
+	return new Vector(
+		new Variable(function() {return self.start.x.lerp(self.end.x).value()}),
+		new Variable(function() {return self.start.y.lerp(self.end.y).value()}),
+	);
+}
+
+// Animation
+function animate_line(start, end) {
+	var line = new Line(start, start.copy());
+	line.end.animate_to(end);
+	return line
+}
+
+
+
+// Angle Marker
+function AngleMarker(start, vertex, end, size) {
+	if (size == undefined) {size = constant_variable(0.1);}
+	this.start = start;
+	this.vertex = vertex;
+	this.end = end;
+	this.size = size;
+}
+
+AngleMarker.prototype.angle = function() {
+	var side_a = this.start.sub(this.vertex);
+	var side_b = this.end.sub(this.vertex);
+
+	return side_a.angle_to(side_b);
+}
+
+AngleMarker.prototype.draw = function(canvas) {
+	var side_a = this.start.sub(this.vertex);
+	var side_b = this.end.sub(this.vertex);
+
+	canvas.arc(this.vertex.value(), this.size.value(), side_a.angle().value(), side_b.angle().value());
+}
+
+AngleMarker.prototype.toString = function() {
+	return 'AngleMarker(' + start.toString() + ', ' + this.vertex.toString() + ', ' + this.end.toString() + ', size=' + this.size.toString() + ')';
+}
+
+// Label
+function Label(text, anchor, angle) {
+	if (angle == undefined) {angle = constant_variable(0);}
+	this.text = text;
+	this.anchor = anchor;
+	this.angle = angle;
+}
+
+Label.prototype.draw = function() {
+	canvas.text(this.text, this.anchor.value(), this.angle.value());
 }
