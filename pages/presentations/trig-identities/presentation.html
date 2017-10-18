@@ -1,64 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset='utf-8'>
 <title>Trigonometric Identities</title>
 
-<script src="/js/modernizr.custom.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/deck/core/deck.core.js"></script>
+<script
+	src='http://code.jquery.com/jquery-3.2.1.min.js'
+	integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+	crossorigin='anonymous'></script>
 
-<link rel="stylesheet" media="screen" href="/deck/core/deck.core.css">
-<link rel="stylesheet" media="screen" href="/deck/extensions/goto/deck.goto.css">
-<link rel="stylesheet" media="screen" href="/deck/extensions/menu/deck.menu.css">
-<link rel="stylesheet" media="screen" href="/deck/extensions/navigation/deck.navigation.css">
-<link rel="stylesheet" media="screen" href="/deck/extensions/status/deck.status.css">
-<link rel="stylesheet" media="screen" href="/deck/extensions/scale/deck.scale.css">
+<link rel='stylesheet' href='../css/theme.css'>
 
-<script src="/deck/extensions/menu/deck.menu.js"></script>
-<script src="/deck/extensions/goto/deck.goto.js"></script>
-<script src="/deck/extensions/status/deck.status.js"></script>
-<script src="/deck/extensions/navigation/deck.navigation.js"></script>
-<script src="/deck/extensions/scale/deck.scale.js"></script>
+<!-- Load KaTeX -->
+<link
+	rel='stylesheet'
+	href='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha1/katex.min.css'
+	integrity='sha384-8QOKbPtTFvh/lMY0qPVbXj9hDh+v8US0pD//FcoYFst2lCIf0BmT58+Heqj0IGyx'
+	crossorigin='anonymous'>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha1/katex.min.js'
+	integrity='sha384-GR8SEkOO1rBN/jnOcQDFcFmwXAevSLx7/Io9Ps1rkxWp983ZIuUGfxivlF/5f5eJ'
+	crossorigin='anonymous'></script>
 
-<link rel="stylesheet" media="screen" href="/deck/themes/style/web-2.0.css">
-<link rel="stylesheet" media="screen" href="/deck/themes/transition/horizontal-slide.css">
-<link rel="stylesheet" media="print" href="/deck/core/print.css">
+<!-- Load MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML' async></script>
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+		tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+	});
+</script>
+
+<!-- Load Diagram Libraries -->
+<script src='../js/variable.js'></script>
+<script src='../js/diagram.js'></script>
+<script src='../js/canvas.js'></script>
+<script src='../js/geometry.js'></script>
 </head>
 
 <body>
-<div class="deck-container">
-	<section class="slide">
-		<h1>Slide</h1>
-	</section>
-
-	<section class="slide">
-		<h1>Content</h1>
-	</section>
-
-	<section class="slide">
-		<h1>Here</h1>
-	</section>
-
-	<div aria-role="navigation">
-		<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-		<a href="#" class="deck-next-link" title="Next">&#8594;</a>
-	</div>
-
-	<p class="deck-status" aria-role="status">
-		<span class="deck-status-current"></span>
-		/
-		<span class="deck-status-total"></span>
-	</p>
-
-	<form action="." method="get" class="goto-form">
-		<label for="goto-slide">Go to slide:</label>
-		<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
-		<datalist id="goto-datalist"></datalist>
-		<input type="submit" value="Go">
-	</form>
+<h1>Compound Angle Identities</h1>
+<div style='font-size: 2em'>
+	\[\sin(\alpha + \beta)\]
+	\[\cos(\alpha + \beta)\]
+	\[\tan(\alpha + \beta)\]
 </div>
 
-<script>$(function() {$.deck('.slide');});</script>
+<h1>Derivation</h1>
+<canvas id='geometric-derivation' class='diagram' height=500 width=1000></canvas>
+<script src='geometric-derivation.js'></script>
 </body>
 </html>
