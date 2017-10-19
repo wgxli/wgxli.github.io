@@ -47,12 +47,76 @@
 	\[\tan(\alpha + \beta)\]
 </div>
 
-<h2>Derivation</h2>
+<h2>Geometric Derivation</h2>
 <canvas id='geometric-derivation' class='diagram' height=500 width=600></canvas>
 <script src='geometric-derivation.js'></script>
 <div style='font-size: 1.2em'>
-	\[\sin(\alpha + \beta) = \sin(\alpha) \cos(\beta) + \cos(\alpha) \sin(\beta)\]
-	\[\cos(\alpha + \beta) = \cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta)\]
+	<details>
+		<summary>$\sin(\alpha + \beta) =$</summary>
+		\[\sin(\alpha) \cos(\beta) + \cos(\alpha) \sin(\beta)\]
+	</details>
+
+	<details>
+		<summary>$\cos(\alpha + \beta) =$</summary>
+		\[\cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta)\]
+	</details>
 </div>
+
+<h2>Complex Number Derivation</h2>
+<div style='font-size: 0.9em'>
+	\[\begin{align*}
+	e^{i\left(\alpha + \beta\right)} &= e^{i\alpha} e^{i\beta} \\
+	\cos(\alpha + \beta) + i \sin(\alpha + \beta) &= \left[\cos(\alpha) + i \sin(\alpha)\right] \left[\cos(\beta) + i \sin(\beta)\right] \\
+	&= \left[\cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)\right] + i\left[\sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta)\right]
+	\end{align*}\]
+</div>
+
+<h2>Matrix Derivation</h2>
+<div style='font-size: 1.2em'>
+	\[
+	R_\theta :=
+	\begin{bmatrix}
+	\cos{\theta} & -\sin{\theta} \\
+	\sin{\theta} & \cos{\theta}
+	\end{bmatrix}\]
+</div>
+<div style='font-size: 0.9em'>
+	\[
+	\begin{align*}
+		R_{\alpha + \beta} &= R_{\alpha} R_{\beta} \\
+		\begin{bmatrix}
+			\cos(\alpha + \beta) & -\sin(\alpha + \beta) \\
+			\sin(\alpha + \beta) & \cos(\alpha + \beta)
+		\end{bmatrix}
+		&= \begin{bmatrix}
+			\cos(\alpha) & -\sin(\alpha) \\
+			\sin(\alpha) & \cos(\alpha)
+		\end{bmatrix}
+		\begin{bmatrix}
+			\cos(\beta) & -\sin(\beta) \\
+			\sin(\beta) & \cos(\beta)
+		\end{bmatrix} \\
+
+		&= \begin{bmatrix}
+			\cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta) & -\left[\sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta)\right] \\
+			\sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta) & \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)
+		\end{bmatrix}
+	\end{align*}
+	\]
+
+<div class='exercise'>
+	<h3>Exercise</h3>
+	By setting $\theta := \alpha = \beta$, deduce formulas for $\sin{2\theta}$ and $\cos{2\theta}$.
+	<details class='answer'>
+		<summary>Answer</summary>
+		\[\begin{align*}
+			\sin{2\theta} &= 2\sin{\theta}\cos{\theta} \\
+			\cos{2\theta} &= \cos^2{\theta} - \sin^2{\theta} \\
+			&= 1 - 2\sin^2{\theta} \\
+			&= 2\cos^2{\theta} - 1
+		\end{align*}\]
+	</details>
+</div>
+
 </body>
 </html>

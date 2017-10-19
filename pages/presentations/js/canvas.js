@@ -25,30 +25,36 @@ Canvas.prototype.clear = function() {
 	this.canvas.clearRect(0, 0, this.container[0].width, this.container[0].height);
 }
 
-Canvas.prototype.line = function(start, end, color, width) {
-	if (color == undefined) {color = DEFAULT_COLOR;}
-	if (width == undefined) {width = 1;}
+Canvas.prototype.start_path = function() {
+	this.canvas.beginPath();
+}
+
+Canvas.prototype.end_path = function() {
+	this.canvas.stroke();
+}
+Canvas.prototype.stop_path = Canvas.prototype.end_path;
+
+Canvas.prototype.color = function(color) {
+	this.canvas.strokeStyle = color;
+}
+
+Canvas.prototype.width = function(width) {
+	this.canvas.lineWidth = width;
+}
+
+Canvas.prototype.line = function(start, end) {
 	var start_screen = this.world_to_screen(start);
 	var end_screen = this.world_to_screen(end);
 
-	this.canvas.beginPath();
 	this.canvas.moveTo(start_screen[0], start_screen[1]);
 	this.canvas.lineTo(end_screen[0], end_screen[1]);
-	this.canvas.strokeStyle = color;
-	this.canvas.lineWidth = width;
-	this.canvas.stroke();
 }
 
-Canvas.prototype.arc = function(center, radius, start_angle, end_angle, color) {
-	if (color == undefined) {color = DEFAULT_COLOR;}
+Canvas.prototype.arc = function(center, radius, start_angle, end_angle) {
 	var center_screen = this.world_to_screen(center);
 	var radius_screen = radius * this.scale;
 
-	this.canvas.beginPath();
 	this.canvas.arc(center_screen[0], center_screen[1], radius_screen, -start_angle, -end_angle, true);
-	this.canvas.strokeStyle = color;
-	this.canvas.lineWidth = 1;
-	this.canvas.stroke();
 }
 
 Canvas.prototype.text = function(text, anchor, angle) {
@@ -59,9 +65,13 @@ Canvas.prototype.text = function(text, anchor, angle) {
 	this.canvas.textAlign = 'center';
 	this.canvas.font = '18pt computer-modern';
 
-	this.canvas.save();
-	this.canvas.translate(anchor_screen[0], anchor_screen[1]);
-	this.canvas.rotate(-angle);
-	this.canvas.fillText(text, 0, 0);
-	this.canvas.restore();
+	if (Math.abs(angle) < 0.01) {
+		this.canvas.fillText(text, anchor_screen[0], anchor_screen[1]);
+	} else {
+		this.canvas.save();
+		this.canvas.translate(anchor_screen[0], anchor_screen[1]);
+		this.canvas.rotate(-angle);
+		this.canvas.fillText(text, 0, 0);
+		this.canvas.restore();
+	}
 }

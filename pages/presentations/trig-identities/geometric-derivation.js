@@ -1,4 +1,6 @@
-﻿var raw_canvas = $('#geometric-derivation');
+﻿
+(function() {
+var raw_canvas = $('#geometric-derivation');
 var canvas = new Canvas(raw_canvas, [130, 450], 450);
 var diagram = new Diagram(canvas);
 
@@ -163,3 +165,4 @@ function animate() {
 	diagram.draw();
 }
 animate();
+})();

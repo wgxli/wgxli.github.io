@@ -13,7 +13,7 @@ Line.prototype.isolate = function() {
 }
 
 Line.prototype.copy = function() {
-	return new Line(this.start.copy(), this.end.copy(), this.color.copy());
+	return new Line(this.start.copy(), this.end.copy());
 }
 
 Line.prototype.value = function() {
@@ -21,7 +21,11 @@ Line.prototype.value = function() {
 }
 
 Line.prototype.draw = function(canvas) {
-	canvas.line(this.start.value(), this.end.value(), this.color.value(), this.width.value());
+	canvas.start_path();
+	canvas.color(this.color.value());
+	canvas.width(this.width.value());
+	canvas.line(this.start.value(), this.end.value());
+	canvas.stop_path();
 }
 
 Line.prototype.toString = function() {
@@ -45,6 +49,59 @@ function animate_line(start, end) {
 }
 
 
+// Rays
+function Ray(start, end) {
+	this.start = start;
+	this.end = end;
+	this.color = WHITE.copy();
+	this.width = CV(2);
+	this.arrow_size = CV(0.05);
+}
+
+Ray.prototype.isolate = function() {
+	this.start = this.start.copy();
+	this.end = this.end.copy();
+	this.color = this.color.copy();
+	this.width = this.width.copy();
+	this.arrow_size = this.arrow_size.copy();
+}
+
+Ray.prototype.copy = function() {
+	return new Ray(this.start.copy(), this.end.copy());
+}
+
+Ray.prototype.value = function() {
+	return [this.start.value(), this.end.value()];
+}
+
+Ray.prototype.draw = function(canvas) {
+	canvas.start_path();
+	canvas.color(this.color.value());
+	canvas.width(this.width.value());
+	canvas.line(this.start.value(), this.end.value());
+	canvas.stop_path();
+}
+
+Ray.prototype.toString = function() {
+	return 'Ray(' + this.start.toString() + ', ' + this.end.toString() + ')';
+}
+
+// Utilities
+Ray.prototype.midpoint = function() {
+	var self = this;
+	return new Vector(
+		new Variable(function() {return self.start.x.lerp(self.end.x).value()}),
+		new Variable(function() {return self.start.y.lerp(self.end.y).value()}),
+	);
+}
+
+// Animation
+function animate_line(start, end) {
+	var line = new Ray(start, start.copy());
+	line.end.animate_to(end);
+	return line
+}
+
 
 // Angle Marker
 function AngleMarker(start, vertex, end) {
@@ -66,7 +123,10 @@ AngleMarker.prototype.draw = function(canvas) {
 	var side_a = this.start.sub(this.vertex);
 	var side_b = this.end.sub(this.vertex);
 
-	canvas.arc(this.vertex.value(), this.size.value(), side_a.angle().value(), side_b.angle().value(), this.color.value());
+	canvas.start_path();
+	canvas.color(this.color.value());
+	canvas.arc(this.vertex.value(), this.size.value(), side_a.angle().value(), side_b.angle().value());
+	canvas.stop_path();
 }
 
 AngleMarker.prototype.toString = function() {
@@ -78,6 +138,8 @@ function RightAngleMarker(start, vertex) {
 	this.start = start;
 	this.vertex = vertex;
 	this.size = CV(0.05);
+	this.color = WHITE.copy();
+	this.width = CV(1);
 }
 
 
@@ -94,8 +156,12 @@ RightAngleMarker.prototype.draw = function(canvas) {
 	var b = this.vertex.add(polar(angle.add(CV(Math.PI/2)), this.size));
 	var c = this.vertex.add(polar(angle.add(CV(Math.PI/4)), this.size.scale(CV(Math.sqrt(2)))));
 
+	canvas.start_path();
+	canvas.color(this.color.value());
+	canvas.width(this.width.value());
 	canvas.line(a.value(), c.value());
 	canvas.line(c.value(), b.value());
+	canvas.stop_path();
 }
 
 // Label
@@ -106,6 +172,6 @@ function Label(text, anchor, angle) {
 	this.angle = angle;
 }
 
-Label.prototype.draw = function() {
+Label.prototype.draw = function(canvas) {
 	canvas.text(this.text, this.anchor.value(), this.angle.value());
 }
