@@ -5,8 +5,11 @@ function Canvas(canvas, center, scale) {
 	this.scale = scale;
 }
 
-Canvas.prototype.click = function(callback) {
+Canvas.prototype.off = function() {
 	this.container.off();
+}
+
+Canvas.prototype.click = function(callback) {
 	this.container.click(callback);
 }
 
@@ -22,10 +25,9 @@ Canvas.prototype.clear = function() {
 	this.canvas.clearRect(0, 0, this.container[0].width, this.container[0].height);
 }
 
-Canvas.prototype.line = function(start, end, color) {
-	if (color == undefined) {
-		color = DEFAULT_COLOR;
-	}
+Canvas.prototype.line = function(start, end, color, width) {
+	if (color == undefined) {color = DEFAULT_COLOR;}
+	if (width == undefined) {width = 1;}
 	var start_screen = this.world_to_screen(start);
 	var end_screen = this.world_to_screen(end);
 
@@ -33,17 +35,18 @@ Canvas.prototype.line = function(start, end, color) {
 	this.canvas.moveTo(start_screen[0], start_screen[1]);
 	this.canvas.lineTo(end_screen[0], end_screen[1]);
 	this.canvas.strokeStyle = color;
-	this.canvas.lineWidth = 2;
+	this.canvas.lineWidth = width;
 	this.canvas.stroke();
 }
 
-Canvas.prototype.arc = function(center, radius, start_angle, end_angle) {
+Canvas.prototype.arc = function(center, radius, start_angle, end_angle, color) {
+	if (color == undefined) {color = DEFAULT_COLOR;}
 	var center_screen = this.world_to_screen(center);
 	var radius_screen = radius * this.scale;
 
 	this.canvas.beginPath();
 	this.canvas.arc(center_screen[0], center_screen[1], radius_screen, -start_angle, -end_angle, true);
-	this.canvas.strokeStyle = DEFAULT_COLOR;
+	this.canvas.strokeStyle = color;
 	this.canvas.lineWidth = 1;
 	this.canvas.stroke();
 }

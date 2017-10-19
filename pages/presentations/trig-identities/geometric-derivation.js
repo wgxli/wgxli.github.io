@@ -1,5 +1,5 @@
 ﻿var raw_canvas = $('#geometric-derivation');
-var canvas = new Canvas(raw_canvas, [250, 450], 450);
+var canvas = new Canvas(raw_canvas, [130, 450], 450);
 var diagram = new Diagram(canvas);
 
 // Outline
@@ -11,8 +11,9 @@ diagram.add_click(label_vertical);
 diagram.add_click(label_horizontal);
 diagram.add_click(move_legs);
 diagram.add_click(draw_diagram);
-diagram.add_click(mark_angles);
 diagram.add_click(label_alpha);
+diagram.add_click(highlight_angle);
+diagram.add_click(label_angle);
 diagram.add_click(label_beta);
 //diagram.add_step(animate);
 
@@ -40,8 +41,10 @@ var vertical;
 var horizontal;
 
 // Angle Markers
+var foot_marker;
 var alpha_marker;
 var beta_marker;
+var beta_similar_marker;
 
 // Behavior
 function draw_line() {
@@ -75,13 +78,16 @@ function draw_base() {
 	vertical.end.animate_to(foot);
 	horizontal.end.animate_to(foot);
 
+	foot_marker = new RightAngleMarker(endpoint, foot);
+	diagram.add_object(foot_marker);
+
 	var cevian_length = CV(1);
 	cevian.end = polar(beta, cevian_length);
 	cevian_length.animate_to(gamma.cos().div(beta.cos()));
 }
 
 function highlight_vertical() {
-	vertical.color.animate_to(BLUE);
+	vertical.color.animate_to(RED);
 }
 
 function label_vertical() {
@@ -90,7 +96,7 @@ function label_vertical() {
 }
 
 function label_horizontal() {
-	diagram.add_object(new Label('cos(α + β)', horizontal.midpoint().add(CVec(0, -0.05))));
+	diagram.add_object(new Label('cos(α + β)', horizontal.midpoint().add(CVec(0, -0.06))));
 }
 
 function move_legs() {
@@ -98,6 +104,7 @@ function move_legs() {
 	lower_right = new Point(alpha.cos().times(beta.cos()), ORIGIN.x);
 	upper_right = new Point(lower_right.x, endpoint.y);
 
+	foot_marker.isolate();
 	vertical.isolate();
 	horizontal.isolate();
 
@@ -111,6 +118,9 @@ function move_legs() {
 	horizontal.start.animate_to(upper_left);
 	horizontal.end.animate_to(endpoint);
 
+	foot_marker.start.animate_to(ORIGIN);
+	foot_marker.vertex.animate_to(upper_left);
+
 	cevian.end.animate_to(polar(beta, alpha.cos()));
 }
 
@@ -119,24 +129,37 @@ function draw_diagram() {
 	diagram.add_object(animate_line(endpoint, upper_right));
 	diagram.add_object(animate_line(mid_endpoint, upper_right));
 	diagram.add_object(animate_line(mid_endpoint, lower_right));
+
+	beta_similar_marker = new AngleMarker(upper_right, mid_endpoint, endpoint);
+	diagram.add_object(beta_similar_marker);
+	diagram.add_object(new RightAngleMarker(endpoint, mid_endpoint));
+	diagram.add_object(new RightAngleMarker(mid_endpoint, lower_right));
 }
 
-function mark_angles() {
-	diagram.add_object(new AngleMarker(upper_right, mid_endpoint, endpoint));
-	diagram.add_object(new AngleMarker(endpoint, mid_endpoint, ORIGIN, CV(0.05)));
-	diagram.add_object(new AngleMarker(mid_endpoint, lower_right, ORIGIN, CV(0.05)));
+function highlight_angle() {
+	beta_similar_marker.color.animate_to(RED);
+}
+
+function label_angle() {
+	beta_similar_marker.color.animate_to(WHITE);
+	diagram.add_object(new Label('β', mid_endpoint.add(CVec(-0.03, 0.15))));
 }
 
 function label_alpha() {
-	diagram.add_object(new Label('cos(α)', ORIGIN.lerp(mid_endpoint).add(polar(beta.sub(CV(Math.PI/2)), CV(0.05))), beta));
-	diagram.add_object(new Label('sin(α)', endpoint.lerp(mid_endpoint).add(polar(beta, CV(0.03))), beta.sub(CV(Math.PI/2))));
+	diagram.add_object(new Label('cos(α)', ORIGIN.lerp(mid_endpoint).add(polar(beta.sub(CV(Math.PI/2)), CV(0.06))), beta));
+	diagram.add_object(new Label('sin(α)', endpoint.lerp(mid_endpoint).add(polar(beta, CV(-0.06))), beta.sub(CV(Math.PI/2))));
 }
 
 function label_beta() {
-	diagram.add_object(new Label('cos(α)cos(β)', ORIGIN.lerp(lower_right).add(CVec(0, -0.05))));
-	diagram.add_object(new Label('cos(α)sin(β)', mid_endpoint.lerp(lower_right).add(CVec(0.03, 0)), CV(-Math.PI/2)));
-	diagram.add_object(new Label('sin(α)cos(β)', upper_right.lerp(mid_endpoint).add(CVec(0.03, 0)), CV(-Math.PI/2)));
-	diagram.add_object(new Label('sin(α)sin(β)', endpoint.lerp(upper_right).add(CVec(0, 0.03))));
+	diagram.add_object(new Label('cos(α) cos(β)', ORIGIN.lerp(lower_right).add(CVec(0, -0.06))));
+	diagram.add_object(new Label('cos(α) sin(β)', mid_endpoint.lerp(lower_right).add(CVec(0.03, 0)), CV(-Math.PI/2)));
+	diagram.add_object(new Label('sin(α) cos(β)', upper_right.lerp(mid_endpoint).add(CVec(0.03, 0)), CV(-Math.PI/2)));
+	diagram.add_object(new Label('sin(α) sin(β)', endpoint.lerp(upper_right).add(CVec(0, 0.03))));
 }
 
 diagram.run();
+function animate() {
+	requestAnimationFrame(animate);
+	diagram.draw();
+}
+animate();

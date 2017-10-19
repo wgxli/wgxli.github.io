@@ -25,9 +25,6 @@ Diagram.prototype.add_click = function(callback) {
 }
 
 Diagram.prototype.run = function() {
-	var self = this;
-	setInterval(function() {self.draw(self);}, 10);
-
 	this.active = true;
 	this.events.reverse();
 	this._run_event();
@@ -44,7 +41,7 @@ Diagram.prototype._run_event = function() {
 		var click_event = this.events.pop();
 		var self = this;
 		console.log("Running '" + click_event.name + "' on click.");
-		this.canvas.click(function(event) {click_event(); self._run_event();});
+		this.canvas.click(function(event) {self.canvas.off(); click_event(); self._run_event();});
 	} else {
 		console.log("Running '" + event.name + "'.");
 		event();
@@ -58,10 +55,10 @@ Diagram.prototype.add_object = function(object) {
 }
 
 // Drawing
-Diagram.prototype.draw = function(self) {
-	self.canvas.clear();
-	for (object of self.objects) {
-		object.draw(self.canvas);
+Diagram.prototype.draw = function() {
+	this.canvas.clear();
+	for (object of this.objects) {
+		object.draw(this.canvas);
 	}
 }
 
