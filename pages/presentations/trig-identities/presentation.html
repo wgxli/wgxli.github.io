@@ -53,12 +53,12 @@
 <div style='font-size: 1.2em'>
 	<details>
 		<summary>$\sin(\alpha + \beta) =$</summary>
-		\[\sin(\alpha) \cos(\beta) + \cos(\alpha) \sin(\beta)\]
+		$\sin{\alpha} \cos{\beta} + \cos{\alpha} \sin{\beta}$
 	</details>
 
 	<details>
 		<summary>$\cos(\alpha + \beta) =$</summary>
-		\[\cos(\alpha) \cos(\beta) - \sin(\alpha) \sin(\beta)\]
+		$\cos{\alpha} \cos{\beta} - \sin{\alpha} \sin{\beta}$
 	</details>
 </div>
 
@@ -66,9 +66,32 @@
 <div style='font-size: 0.9em'>
 	\[\begin{align*}
 	e^{i\left(\alpha + \beta\right)} &= e^{i\alpha} e^{i\beta} \\
-	\cos(\alpha + \beta) + i \sin(\alpha + \beta) &= \left[\cos(\alpha) + i \sin(\alpha)\right] \left[\cos(\beta) + i \sin(\beta)\right] \\
-	&= \left[\cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)\right] + i\left[\sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta)\right]
+	\cos(\alpha + \beta) + i \sin(\alpha + \beta) &= \left(\cos{\alpha} + i \sin{\alpha}\right) \left(\cos{\beta} + i \sin{\beta}\right) \\
+	&= \left(\cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta}\right) + i\left(\sin{\alpha}\cos{\beta} + \cos{\alpha}\sin{\beta}\right)
 	\end{align*}\]
+</div>
+<div class='exercise'>
+	<h3>Exercise</h3>
+	By manipulating the equation $e^{i\left(3\theta\right)} = \left(e^{i\theta}\right)^3$, derive formulas for $\sin{3\theta}$ and $\cos{3\theta}$.
+	<details>
+		<summary>Hint</summary>
+		Use binomial expansion, then group the real and imaginary terms.
+	</details>
+	<details class='answer'>
+		<summary>Answer</summary>
+		\[\begin{align*}
+			e^{i\left(3\theta\right)} &= \left(e^{i\theta}\right)^3 \\
+			\cos{3\theta} + i \sin{3\theta} &= \left(\cos{\theta} + i \sin{\theta}\right)^3 \\
+			&= \left(\cos^3{\theta} - 3 \cos{\theta} \sin^2{\theta}\right) + i \left(3\cos^2{\theta} \sin{\theta}  - \sin^3{\theta}\right) \\
+		\end{align*}\]
+		Therefore,
+		\[\begin{align*}
+			\cos{3\theta} &= \cos^3{\theta} - 3 \cos{\theta} \sin^2{\theta} \\
+			&= 4\cos^3{\theta} - 3\cos{\theta} \\
+			\sin{3\theta} &= 3\cos^2{\theta} \sin{\theta}  - \sin^3{\theta} \\
+			&= 3\sin{\theta} - 4\sin^3{\theta}
+		\end{align*}\]
+	</details>
 </div>
 
 <h2>Matrix Derivation</h2>
@@ -89,23 +112,23 @@
 			\sin(\alpha + \beta) & \cos(\alpha + \beta)
 		\end{bmatrix}
 		&= \begin{bmatrix}
-			\cos(\alpha) & -\sin(\alpha) \\
-			\sin(\alpha) & \cos(\alpha)
+			\cos{\alpha} & -\sin{\alpha} \\
+			\sin{\alpha} & \cos{\alpha}
 		\end{bmatrix}
 		\begin{bmatrix}
-			\cos(\beta) & -\sin(\beta) \\
-			\sin(\beta) & \cos(\beta)
+			\cos{\beta} & -\sin{\beta} \\
+			\sin{\beta} & \cos{\beta}
 		\end{bmatrix} \\
 
 		&= \begin{bmatrix}
-			\cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta) & -\left[\sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta)\right] \\
-			\sin(\alpha)\cos(\beta) + \cos(\alpha)\sin(\beta) & \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta)
+			\cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta} & -(\sin{\alpha}\cos{\beta} + \cos{\alpha}\sin{\beta}) \\
+			\sin{\alpha}\cos{\beta} + \cos{\alpha}\sin{\beta} & \cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta}
 		\end{bmatrix}
 	\end{align*}
 	\]
 
 <div class='exercise'>
-	<h3>Exercise</h3>
+	<h3>Exercises</h3>
 	By setting $\theta := \alpha = \beta$, deduce formulas for $\sin{2\theta}$ and $\cos{2\theta}$.
 	<details class='answer'>
 		<summary>Answer</summary>
@@ -116,7 +139,53 @@
 			&= 2\cos^2{\theta} - 1
 		\end{align*}\]
 	</details>
+	<hr>
+	Find $\sin{15\unicode{xb0}}$.
+	<details>
+		<summary>Hint</summary>
+		$15\unicode{xb0} = 60\unicode{xb0} + \left(-45\unicode{xb0}\right)$.
+	</details>
+	<details class='answer'>
+		<summary>Answer</summary>
+		\[\begin{align*}
+			\sin{15\unicode{xb0}} &= \sin(60\unicode{xb0} - 45\unicode{xb0}) \\
+			&= \sin{60\unicode{xb0}}\cos{-45\unicode{xb0}} + \cos{60\unicode{xb0}}\sin{-45\unicode{xb0}} \\
+			&= \sin{60\unicode{xb0}}\cos{45\unicode{xb0}} - \cos{60\unicode{xb0}}\sin{45\unicode{xb0}} \\
+			&= \frac{\sqrt{3}}{2} \frac{\sqrt{2}}{2} - \frac{1}{2} \frac{\sqrt{2}}{2} \\
+			&= \frac{\sqrt{6} - \sqrt{2}}{4} \\
+		\end{align*}\]
+	</details>
 </div>
 
+<h2>Tangent Compound Angle Identity</h2>
+We can derive the tangent angle sum identity as follows:
+\[\begin{align*}
+\tan(\alpha + \beta) &= \frac{\sin(\alpha + \beta)}{\cos(\alpha + \beta)} \\
+&= \frac{\sin{\alpha}\cos{\beta} + \cos{\alpha}\sin{\beta}}{\cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta}} \\
+&= \frac{\sin{\alpha}\cos{\beta} + \cos{\alpha}\sin{\beta}}{\cos{\alpha}\cos{\beta} - \sin{\alpha}\sin{\beta}} \div \frac{\cos{\alpha}\cos{\beta}}{\cos{\alpha}\cos{\beta}} \\
+&= \frac{\tan{\alpha} + \tan{\beta}}{1 - \tan{\alpha}\tan{\beta}}
+\end{align*}\]
+
+<h3>Exercise</h3>
+By setting $\theta := \alpha = \beta$, deduce a formula for $\tan{2\theta}$.
+<details class='answer'>
+	<summary>Answer</summary>
+	\[\tan{2\theta} = \frac{2\tan{\theta}}{1 - \tan^2{\theta}}\]
+</details>
+	
+
+
+<h2>Practice Problems</h2>
+Problems are listed in increasing difficulty.
+<ul>
+	<li>Review Set 13B, 3</li>
+	<li>Review Set 13A, 9</li>
+	<li>Exercise 13E, 5</li>
+	<li>Review Set 13B, 12</li>
+	<li>Review Set 13A, 11</li>
+	<li>Review Set 13A, 8</li>
+	<li>Exercise 13E, 19</li>
+	<li>Review Set 13C, 12</li>
+</ul>
 </body>
 </html>
