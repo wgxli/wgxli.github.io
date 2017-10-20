@@ -143,10 +143,10 @@ function move_legs() {
 }
 
 function draw_diagram() {
-	diagram.add_object(animate_line(endpoint, mid_endpoint));
-	diagram.add_object(animate_line(endpoint, upper_right));
-	diagram.add_object(animate_line(mid_endpoint, upper_right));
-	diagram.add_object(animate_line(mid_endpoint, lower_right));
+	diagram.add_object(AnimLine(endpoint, mid_endpoint));
+	diagram.add_object(AnimLine(endpoint, upper_right));
+	diagram.add_object(AnimLine(mid_endpoint, upper_right));
+	diagram.add_object(AnimLine(mid_endpoint, lower_right));
 
 	beta_similar_marker = new AngleMarker(upper_right, mid_endpoint, endpoint);
 	diagram.add_object(beta_similar_marker);

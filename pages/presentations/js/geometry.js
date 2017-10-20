@@ -32,6 +32,13 @@ Line.prototype.toString = function() {
 	return 'Line(' + this.start.toString() + ', ' + this.end.toString() + ')';
 }
 
+// Animation
+function AnimLine(start, end) {
+	var line = new Line(start, start.copy());
+	line.end.animate_to(end);
+	return line;
+}
+
 // Utilities
 Line.prototype.midpoint = function() {
 	var self = this;
@@ -39,13 +46,6 @@ Line.prototype.midpoint = function() {
 		new Variable(function() {return self.start.x.lerp(self.end.x).value()}),
 		new Variable(function() {return self.start.y.lerp(self.end.y).value()}),
 	);
-}
-
-// Animation
-function animate_line(start, end) {
-	var line = new Line(start, start.copy());
-	line.end.animate_to(end);
-	return line
 }
 
 
@@ -93,13 +93,6 @@ Ray.prototype.midpoint = function() {
 		new Variable(function() {return self.start.x.lerp(self.end.x).value()}),
 		new Variable(function() {return self.start.y.lerp(self.end.y).value()}),
 	);
-}
-
-// Animation
-function animate_line(start, end) {
-	var line = new Ray(start, start.copy());
-	line.end.animate_to(end);
-	return line
 }
 
 
@@ -169,7 +162,8 @@ function Label(text, anchor) {
 	this.text = text;
 	this.anchor = anchor;
 	this.angle = CV(0);
-	this.color = WHITE.copy();
+	this.color = TRANSPARENT.copy();
+	this.color.animate_to(WHITE);
 }
 
 Label.prototype.draw = function(canvas) {
