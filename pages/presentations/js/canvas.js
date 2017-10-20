@@ -38,6 +38,10 @@ Canvas.prototype.color = function(color) {
 	this.canvas.strokeStyle = color;
 }
 
+Canvas.prototype.fill_color = function(color) {
+	this.canvas.fillStyle = color;
+}
+
 Canvas.prototype.width = function(width) {
 	this.canvas.lineWidth = width;
 }
@@ -61,7 +65,6 @@ Canvas.prototype.text = function(text, anchor, angle) {
 	if (angle == undefined) {angle = 0;}
 	var anchor_screen = this.world_to_screen(anchor);
 
-	this.canvas.fillStyle = DEFAULT_COLOR;
 	this.canvas.textAlign = 'center';
 	this.canvas.font = '18pt computer-modern';
 

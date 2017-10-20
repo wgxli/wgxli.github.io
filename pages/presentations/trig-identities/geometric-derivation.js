@@ -17,7 +17,14 @@ diagram.add_click(label_alpha);
 diagram.add_click(highlight_angle);
 diagram.add_click(label_angle);
 diagram.add_click(label_beta);
-//diagram.add_step(animate);
+diagram.add_click(highlight_left);
+diagram.add_click(highlight_right);
+diagram.add_click(highlight_top);
+diagram.add_click(highlight_bottom);
+diagram.add_click(finish);
+
+// State
+var ACTIVE = true;
 
 // Constants
 var ALPHA = CV(0.6);
@@ -47,6 +54,10 @@ var foot_marker;
 var alpha_marker;
 var beta_marker;
 var beta_similar_marker;
+
+// Labels
+var sinAB, sinAcosB, cosAsinB;
+var cosAB, cosAcosB, sinAsinB;
 
 // Behavior
 function draw_line() {
@@ -94,11 +105,14 @@ function highlight_vertical() {
 
 function label_vertical() {
 	vertical.color.animate_to(WHITE);
-	diagram.add_object(new Label('sin(α + β)', vertical.midpoint().add(CVec(0.03, 0)), CV(-Math.PI/2)));
+	sinAB = new Label('sin(α + β)', vertical.midpoint().add(CVec(0.03, 0)));
+	sinAB.angle = CV(-Math.PI/2);
+	diagram.add_object(sinAB);
 }
 
 function label_horizontal() {
-	diagram.add_object(new Label('cos(α + β)', horizontal.midpoint().add(CVec(0, -0.06))));
+	cosAB = new Label('cos(α + β)', horizontal.midpoint().add(CVec(0, -0.06)));
+	diagram.add_object(cosAB);
 }
 
 function move_legs() {
@@ -124,6 +138,8 @@ function move_legs() {
 	foot_marker.vertex.animate_to(upper_left);
 
 	cevian.end.animate_to(polar(beta, alpha.cos()));
+
+	cosAB.anchor.animate_to(horizontal.midpoint().add(CVec(0, 0.03)));
 }
 
 function draw_diagram() {
@@ -148,20 +164,64 @@ function label_angle() {
 }
 
 function label_alpha() {
-	diagram.add_object(new Label('cos(α)', ORIGIN.lerp(mid_endpoint).add(polar(beta.sub(CV(Math.PI/2)), CV(0.06))), beta));
-	diagram.add_object(new Label('sin(α)', endpoint.lerp(mid_endpoint).add(polar(beta, CV(-0.06))), beta.sub(CV(Math.PI/2))));
+	var cosA = new Label('cos(α)', ORIGIN.lerp(mid_endpoint).add(polar(beta.sub(CV(Math.PI/2)), CV(0.06))));
+	var sinA = new Label('sin(α)', endpoint.lerp(mid_endpoint).add(polar(beta, CV(-0.06))));
+
+	cosA.angle = beta;
+	sinA.angle = beta.sub(CV(Math.PI/2));
+
+	diagram.add_object(cosA);
+	diagram.add_object(sinA);
+
 }
 
 function label_beta() {
-	diagram.add_object(new Label('cos(α) cos(β)', ORIGIN.lerp(lower_right).add(CVec(0, -0.06))));
-	diagram.add_object(new Label('cos(α) sin(β)', mid_endpoint.lerp(lower_right).add(CVec(0.03, 0)), CV(-Math.PI/2)));
-	diagram.add_object(new Label('sin(α) cos(β)', upper_right.lerp(mid_endpoint).add(CVec(0.03, 0)), CV(-Math.PI/2)));
-	diagram.add_object(new Label('sin(α) sin(β)', endpoint.lerp(upper_right).add(CVec(0, 0.03))));
+	cosAcosB = new Label('cos(α) cos(β)', ORIGIN.lerp(lower_right).add(CVec(0, -0.06)));
+	cosAsinB = new Label('cos(α) sin(β)', mid_endpoint.lerp(lower_right).add(CVec(0.03, 0)));
+	sinAcosB = new Label('sin(α) cos(β)', upper_right.lerp(mid_endpoint).add(CVec(0.03, 0)));
+	sinAsinB = new Label('sin(α) sin(β)', endpoint.lerp(upper_right).add(CVec(0, 0.03)));
+
+	cosAsinB.angle = CV(-Math.PI/2);
+	sinAcosB.angle = CV(-Math.PI/2);
+
+	diagram.add_object(cosAcosB);
+	diagram.add_object(cosAsinB);
+	diagram.add_object(sinAcosB);
+	diagram.add_object(sinAsinB);
+}
+
+function highlight_left() {
+	sinAB.color.animate_to(RED);
+}
+
+function highlight_right() {
+	sinAcosB.color.animate_to(RED);
+	cosAsinB.color.animate_to(RED);
+}
+
+function highlight_top() {
+	sinAB.color.animate_to(WHITE);
+	sinAcosB.color.animate_to(WHITE);
+	cosAsinB.color.animate_to(WHITE);
+	cosAB.color.animate_to(RED);
+}
+
+function highlight_bottom() {
+	cosAcosB.color.animate_to(RED);
+	sinAsinB.color.animate_to(RED);
+}
+
+function finish() {
+	cosAB.color = WHITE;
+	cosAcosB.color = WHITE;
+	sinAsinB.color = WHITE;
+
+	ACTIVE = false;
 }
 
 diagram.run();
 function animate() {
-	requestAnimationFrame(animate);
+	if (ACTIVE) {requestAnimationFrame(animate);}
 	diagram.draw();
 }
 animate();

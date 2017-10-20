@@ -165,13 +165,14 @@ RightAngleMarker.prototype.draw = function(canvas) {
 }
 
 // Label
-function Label(text, anchor, angle) {
-	if (angle == undefined) {angle = CV(0);}
+function Label(text, anchor) {
 	this.text = text;
 	this.anchor = anchor;
-	this.angle = angle;
+	this.angle = CV(0);
+	this.color = WHITE.copy();
 }
 
 Label.prototype.draw = function(canvas) {
+	canvas.fill_color(this.color.value());
 	canvas.text(this.text, this.anchor.value(), this.angle.value());
 }
