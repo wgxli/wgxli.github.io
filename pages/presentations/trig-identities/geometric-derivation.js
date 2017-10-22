@@ -100,7 +100,7 @@ function draw_base() {
 }
 
 function highlight_vertical() {
-	vertical.color.animate_to(YELLOW);
+	vertical.color.animate_to(LIGHT_BLUE);
 }
 
 function label_vertical() {
@@ -155,7 +155,7 @@ function draw_diagram() {
 }
 
 function highlight_angle() {
-	beta_similar_marker.color.animate_to(YELLOW);
+	beta_similar_marker.color.animate_to(LIGHT_BLUE);
 }
 
 function label_angle() {
@@ -191,24 +191,24 @@ function label_beta() {
 }
 
 function highlight_left() {
-	sinAB.color.animate_to(YELLOW);
+	sinAB.color.animate_to(LIGHT_BLUE);
 }
 
 function highlight_right() {
-	sinAcosB.color.animate_to(YELLOW);
-	cosAsinB.color.animate_to(YELLOW);
+	sinAcosB.color.animate_to(LIGHT_BLUE);
+	cosAsinB.color.animate_to(LIGHT_BLUE);
 }
 
 function highlight_top() {
 	sinAB.color.animate_to(WHITE);
 	sinAcosB.color.animate_to(WHITE);
 	cosAsinB.color.animate_to(WHITE);
-	cosAB.color.animate_to(YELLOW);
+	cosAB.color.animate_to(LIGHT_BLUE);
 }
 
 function highlight_bottom() {
-	cosAcosB.color.animate_to(YELLOW);
-	sinAsinB.color.animate_to(YELLOW);
+	cosAcosB.color.animate_to(LIGHT_BLUE);
+	sinAsinB.color.animate_to(LIGHT_BLUE);
 }
 
 function finish() {
