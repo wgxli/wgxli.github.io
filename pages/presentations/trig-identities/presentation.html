@@ -41,6 +41,9 @@
 
 <body>
 <h1>Compound Angle Identities</h1>
+<div style='text-align: center; font-size: 1em'>
+		This webpage is available at <a href='https://bit.ly/trig-identities' style='color: white'>bit.ly/trig-identities</a>.
+</div>
 <div style='font-size: 1.7em'>
 	\[\sin(\alpha + \beta)\]
 	\[\cos(\alpha + \beta)\]
@@ -71,7 +74,7 @@
 	\end{align*}\]
 </div>
 <div class='exercise'>
-	<h3>Exercise</h3>
+	<h3>Exercises</h3>
 	By manipulating the equation $e^{i\left(3\theta\right)} = \left(e^{i\theta}\right)^3$, derive formulas for $\sin{3\theta}$ and $\cos{3\theta}$.
 	<details>
 		<summary>Hint</summary>
@@ -91,6 +94,32 @@
 			\sin{3\theta} &= 3\cos^2{\theta} \sin{\theta}  - \sin^3{\theta} \\
 			&= 3\sin{\theta} - 4\sin^3{\theta}
 		\end{align*}\]
+	</details>
+
+	<hr>
+
+	Find all roots of the expression $8x^3 - 6x - 1$.
+	<details>
+		<summary>Hint</summary>
+		Rewrite as $4x^3 - 3x = \frac{1}{2}$, then substitute $x = \cos{\theta}$.
+	</details>
+	<details class='answer'>
+		<summary>Answer</summary>
+		Let $x = \cos{\theta}$.
+		\[\begin{align*}
+			\frac{1}{2} &= 4x^3 - 3x \\
+			&= 4\cos^3{\theta} - 3\cos{\theta} \\
+			&= \cos{3\theta}
+		\end{align*}\]
+		Since $\cos{\frac{\pi}{3}} = \frac{1}{2}$, we have $3\theta = \frac{\pi}{3} + 2\pi k$.
+		Three possible values of $\theta$ are:
+		\[\begin{align*}
+			\theta = \frac{1}{3}\left(\frac{\pi}{3}\right) &\implies x = \cos{\frac{\pi}{9}} \\
+			\theta = \frac{1}{3}\left(\frac{\pi}{3} + 2\pi\right) &\implies x = \cos{\frac{7\pi}{9}} \\
+			\theta = \frac{1}{3}\left(\frac{\pi}{3} + 4\pi\right) &\implies x = \cos{\frac{13\pi}{9}}
+		\end{align*}\]
+		<a href='https://www.desmos.com/calculator/11fkcqupbi' target='_blank' style='color: white'>Click here for Desmos</a>
+		
 	</details>
 </div>
 
@@ -173,7 +202,32 @@ By setting $\theta := \alpha = \beta$, deduce a formula for $\tan{2\theta}$.
 	\[\tan{2\theta} = \frac{2\tan{\theta}}{1 - \tan^2{\theta}}\]
 </details>
 	
+<h2>Half-Angle Identities</h2>
+We can rewrite the cosine double-angle identity with $\frac{\theta}{2}$ in place of $\theta$.
+\[\begin{align*}
+\cos{\theta} &= 2\cos^2{\frac{\theta}{2}} - 1 \\
+&= 1 - 2 \sin^2{\frac{\theta}{2}}
+\end{align*}\]
 
+From this, we can rearrange to obtain
+\[\cos{\frac{\theta}{2}} = \pm \sqrt{\frac{1 + \cos{\theta}}{2}}\]
+\[\sin{\frac{\theta}{2}} = \pm \sqrt{\frac{1 - \cos{\theta}}{2}}\]
+
+The $\pm$ signs are necessary since $\cos(\theta) = \cos(\theta + 2 \pi)$, but $\cos{\frac{\theta}{2}} \neq \cos{\frac{\theta + 2\pi}{2}}$ (and likewise for $\sin$).
+
+<h3>Exercise</h3>
+From the above half-angle identities, derive a formula for $\tan{\frac{\theta}{2}}$ in terms of $\cos{\theta}$.
+<details>
+	<summary>Hint</summary>
+	$\tan{x} = \frac{\sin{x}}{\cos{x}}$
+</details>
+<details>
+	<summary>Answer</summary>
+	\[\begin{align*}
+		\tan{\frac{\theta}{2}} &= \frac{\sin{\frac{\theta}{2}}}{\cos{\frac{\theta}{2}}} \\
+		&= \pm \sqrt{\frac{1 - \cos{\theta}}{1 + \cos{\theta}}}
+	\end{align*}\]
+</details>
 
 <h2>Practice Problems</h2>
 Problems are listed in order of increasing difficulty.
