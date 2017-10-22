@@ -42,5 +42,6 @@ Color.prototype.animate_to = function(other) {
 
 WHITE = constant_color(1, 1, 1);
 RED = constant_color(1, 0, 0);
+YELLOW = constant_color(1, 1, 0);
 BLUE = constant_color(0, 0.5, 1);
 TRANSPARENT = constant_color(1, 1, 1, 0);
