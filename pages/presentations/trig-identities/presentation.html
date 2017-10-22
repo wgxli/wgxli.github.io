@@ -53,17 +53,45 @@
 <h2>Geometric Derivation</h2>
 <canvas id='geometric-derivation' class='diagram' height=500 width=600></canvas>
 <script src='geometric-derivation.js'></script>
-<div style='font-size: 1.2em'>
-	<details>
-		<summary>$\sin(\alpha + \beta) =$</summary>
-		$\sin{\alpha} \cos{\beta} + \cos{\alpha} \sin{\beta}$
-	</details>
+<details>
+	<summary>$\sin(\alpha + \beta) =$</summary>
+	\[\sin{\alpha} \cos{\beta} + \cos{\alpha} \sin{\beta}\]
+</details>
 
+<details>
+	<summary>$\cos(\alpha + \beta) =$</summary>
+	\[\cos{\alpha} \cos{\beta} - \sin{\alpha} \sin{\beta}\]
+</details>
+<div class='exercise'>
+	<h3>Exercises</h3>
+	By setting $\theta := \alpha = \beta$, deduce formulas for $\sin{2\theta}$ and $\cos{2\theta}$.
+	<details class='answer'>
+		<summary>Answer</summary>
+		\[\begin{align*}
+			\sin{2\theta} &= 2\sin{\theta}\cos{\theta} \\
+			\cos{2\theta} &= \cos^2{\theta} - \sin^2{\theta} \\
+			&= 1 - 2\sin^2{\theta} \\
+			&= 2\cos^2{\theta} - 1
+		\end{align*}\]
+	</details>
+	<hr>
+	Find $\sin{15\unicode{xb0}}$.
 	<details>
-		<summary>$\cos(\alpha + \beta) =$</summary>
-		$\cos{\alpha} \cos{\beta} - \sin{\alpha} \sin{\beta}$
+		<summary>Hint</summary>
+		$15\unicode{xb0} = 60\unicode{xb0} + \left(-45\unicode{xb0}\right)$.
+	</details>
+	<details class='answer'>
+		<summary>Answer</summary>
+		\[\begin{align*}
+			\sin{15\unicode{xb0}} &= \sin(60\unicode{xb0} - 45\unicode{xb0}) \\
+			&= \sin{60\unicode{xb0}}\cos{-45\unicode{xb0}} + \cos{60\unicode{xb0}}\sin{-45\unicode{xb0}} \\
+			&= \sin{60\unicode{xb0}}\cos{45\unicode{xb0}} - \cos{60\unicode{xb0}}\sin{45\unicode{xb0}} \\
+			&= \frac{\sqrt{3}}{2} \frac{\sqrt{2}}{2} - \frac{1}{2} \frac{\sqrt{2}}{2} \\
+			&= \frac{\sqrt{6} - \sqrt{2}}{4} \\
+		\end{align*}\]
 	</details>
 </div>
+
 
 <h2>Complex Number Derivation</h2>
 <div style='font-size: 0.9em'>
@@ -122,7 +150,7 @@
 			\theta = \frac{1}{3}\left(\frac{\pi}{3} + 2\pi\right) &\implies x = \cos{\frac{7\pi}{9}} \\
 			\theta = \frac{1}{3}\left(\frac{\pi}{3} + 4\pi\right) &\implies x = \cos{\frac{13\pi}{9}}
 		\end{align*}\]
-		<a href='https://www.desmos.com/calculator/11fkcqupbi' target='_blank' style='color: white'>Click here for Desmos</a>
+		<a href='https://www.desmos.com/calculator/11fkcqupbi' target='_blank' style='color: yellow'>Click here for Desmos</a>
 		
 	</details>
 </div>
@@ -160,35 +188,6 @@
 	\end{align*}
 	\]
 
-<div class='exercise'>
-	<h3>Exercises</h3>
-	By setting $\theta := \alpha = \beta$, deduce formulas for $\sin{2\theta}$ and $\cos{2\theta}$.
-	<details class='answer'>
-		<summary>Answer</summary>
-		\[\begin{align*}
-			\sin{2\theta} &= 2\sin{\theta}\cos{\theta} \\
-			\cos{2\theta} &= \cos^2{\theta} - \sin^2{\theta} \\
-			&= 1 - 2\sin^2{\theta} \\
-			&= 2\cos^2{\theta} - 1
-		\end{align*}\]
-	</details>
-	<hr>
-	Find $\sin{15\unicode{xb0}}$.
-	<details>
-		<summary>Hint</summary>
-		$15\unicode{xb0} = 60\unicode{xb0} + \left(-45\unicode{xb0}\right)$.
-	</details>
-	<details class='answer'>
-		<summary>Answer</summary>
-		\[\begin{align*}
-			\sin{15\unicode{xb0}} &= \sin(60\unicode{xb0} - 45\unicode{xb0}) \\
-			&= \sin{60\unicode{xb0}}\cos{-45\unicode{xb0}} + \cos{60\unicode{xb0}}\sin{-45\unicode{xb0}} \\
-			&= \sin{60\unicode{xb0}}\cos{45\unicode{xb0}} - \cos{60\unicode{xb0}}\sin{45\unicode{xb0}} \\
-			&= \frac{\sqrt{3}}{2} \frac{\sqrt{2}}{2} - \frac{1}{2} \frac{\sqrt{2}}{2} \\
-			&= \frac{\sqrt{6} - \sqrt{2}}{4} \\
-		\end{align*}\]
-	</details>
-</div>
 
 <h2>Tangent Compound Angle Identity</h2>
 We can derive the tangent angle sum identity as follows:
@@ -199,12 +198,34 @@ We can derive the tangent angle sum identity as follows:
 &= \frac{\tan{\alpha} + \tan{\beta}}{1 - \tan{\alpha}\tan{\beta}}
 \end{align*}\]
 
-<h3>Exercise</h3>
+<h3>Exercises</h3>
 By setting $\theta := \alpha = \beta$, deduce a formula for $\tan{2\theta}$.
 <details class='answer'>
 	<summary>Answer</summary>
 	\[\tan{2\theta} = \frac{2\tan{\theta}}{1 - \tan^2{\theta}}\]
 </details>
+<hr>
+Given that $\tan{\theta} = \frac{1}{5}$, find $\tan{2\theta}$. What do you notice about $\tan{2\theta}$?
+<details>
+	<summary>Hint</summary>
+	Use the previous exercise.
+	<br>
+	Look carefully at the numerator and denominator of $\tan{2\theta}$.
+</details>
+<details>
+	<summary>Answer</summary>
+	\[\begin{align*}
+	\tan{2\theta} &= \frac{2 \times \frac{1}{5}}{1 - \left(\frac{1}{5}\right)^2} \\
+	&= \frac{\frac{2}{5}}{\frac{24}{25}} \\
+	&= \frac{5}{12} \\
+	\end{align*}\]
+	Note that 5 and 12 are the legs of a Pythagorean triple.
+	<br>
+	In general, if $\tan{\theta} \in \mathbb{Q}$, then $\tan{2\theta} = \frac{a}{b}$ where $a$ and $b$ are the legs of a Pythagorean triple.
+	<br>
+	You can generate all possible Pythagorean triples in this way.
+</details>
+
 	
 <h2>Half-Angle Identities</h2>
 We can rewrite the cosine double-angle identity with $\frac{\theta}{2}$ in place of $\theta$.
