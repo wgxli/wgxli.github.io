@@ -88,6 +88,7 @@ function add_entry_before(word, key) {
 function solve() {
 	if (get_input()) {
 		clear_table();
+		$('#submit').prop('disabled', true);
 		iterate_tree(word_search(), 0, new Set());
 	}
 }
@@ -98,6 +99,7 @@ function iterate_tree(generator, index, found) {
 		if (next_element.done) {
 			$('progress').attr('value', '1');
 			$('#status').text('Done!');
+			$('#submit').prop('disabled', false);
 			return;
 		}
 		var word = next_element.value;
