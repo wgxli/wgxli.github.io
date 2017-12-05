@@ -62,7 +62,10 @@ $(document).ready(function() {
 
 function clear_table() {
 	$('tr.search-result').remove();
-	TABLE = [undefined, '', '', '', '', '', '', '', '', '', '', ''];
+	TABLE = [undefined];
+	for (i=0; i<NUM_NODES; i++) {
+		TABLE.push('');
+	}
 }
 
 function add_table_entry(word) {
@@ -122,7 +125,7 @@ function get_input() {
 	MIN_LENGTH = parseInt($("input[name='min-length']").val());
 	MAX_LENGTH = parseInt($("input[name='max-length']").val());
 
-	if (WORD_GRID.length != 16) {
+	if (WORD_GRID.length != NUM_NODES) {
 		$('#status').text('Error: Expected 16 letters, got ' + WORD_GRID.length + '.');
 		$('#status').attr('style', 'color: red');
 		return false;
