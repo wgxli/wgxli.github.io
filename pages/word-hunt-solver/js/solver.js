@@ -21,7 +21,11 @@ const SEARCH_SPACE = [
 	283400,
 	720384,
 	1626160,
-	3220808
+	3220808,
+	5531072,
+	8175592,
+	10425784,
+	11686456
 ];
 
 $(document).ready(function() {
@@ -104,7 +108,7 @@ function iterate_tree(generator, index, found) {
 			}
 		}
 	}
-	index += i;
+	index += 1000;
 	var completion = index / SEARCH_SPACE[MAX_LENGTH];
 	$('progress').attr('value', completion);
 	$('#status').text('Solving (' + Math.round(completion * 100) + '%)');
