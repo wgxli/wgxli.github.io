@@ -133,17 +133,20 @@ function* all_simple_paths(start, length, trie) {
 	if (length >= MAX_LENGTH || !(WORD_GRID[start] in trie)) {
 		return;
 	}
-	trie = trie[WORD_GRID[start]]
+
+	var letter = WORD_GRID[start];
+
+	trie = trie[letter]
 
 	if ('eow' in trie) {
-		yield WORD_GRID[start];
+		yield letter;
 	}
 
 	VISITED[start] = true;
 	for (var neighbor of NEIGHBORHOOD[start]) {
 		if (!VISITED[neighbor] && WORD_GRID[neighbor] in trie) {
 			for (var path of all_simple_paths(neighbor, length + 1, trie)) {
-				yield WORD_GRID[start] + path;
+				yield letter + path;
 			}
 		}
 	}
