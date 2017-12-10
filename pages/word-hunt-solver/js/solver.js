@@ -5,9 +5,7 @@ var MAX_LENGTH = 0;
 var NUM_NODES;
 var VISITED = [];
 var JOINED;
-
-var TABLE;
-var TRIE;
+var NEIGHBORHOOD;
 
 $(document).ready(function() {
 	$("textarea[name='grid']").on('input', solve);
@@ -21,38 +19,29 @@ $(document).ready(function() {
 
 function clear_table() {
 	$('tr.search-result').remove();
-	TABLE = [undefined];
-	for (i=0; i<NUM_NODES; i++) {
-		TABLE.push('');
-	}
 }
 
-function add_table_entry(word) {
-	for (i = word.length; i >= 0; i--) {
-		if (TABLE[i] != '') {
-			add_entry_before(word, TABLE[i]);
-			TABLE[word.length] = word;
-			return;
-		}
-	}
-}
+function add_table_entries(words) {
+	var words = Array.from(words).sort(function(a, b) {return b.length - a.length || a.localeCompare(b);});
 
-function add_entry_before(word, key) {
-	var entry_text = '<tr class="search-result" id="result-' + word + '"><td>' + word.length + '</td><td>' + word + '</td></tr>';
-	if (key != undefined) {
-		$('tr.search-result#result-' + key).before(entry_text);
-	} else {
-		$('table#results').append(entry_text);
+	entries = [];
+	for (word of words) {
+		entries.push(`<tr class="search-result"><td>${word.length}</td><td>${word}</td></tr>`);
 	}
+	$('table#results').append(entries.join('\n'));
 }
 
 function solve() {
 	var start_time = (new Date()).getTime();
+
 	get_input();
 	clear_table();
 	words_found = iterate_tree(word_search());
+	add_table_entries(words_found);
+
 	var end_time = (new Date()).getTime();
 	var seconds_elapsed = (end_time - start_time)/1000;
+	
 	console.log(`${words_found.size} words found in ${seconds_elapsed} seconds.`);
 	$('#num-results').text(`${words_found.size} words found.`);
 }
@@ -63,7 +52,6 @@ function iterate_tree(generator) {
 		if (word.length >= MIN_LENGTH) {
 			if (!found.has(word)) {
 				found.add(word);
-				add_table_entry(word);
 			}
 		}
 	}
@@ -128,6 +116,11 @@ function initialize_graph() {
 		}
 		JOINED.push(adjacency_vector);
 	}
+
+	NEIGHBORHOOD = {};
+	for (var i=0; i < NUM_NODES; i++) {
+		NEIGHBORHOOD[i] = neighborhood(i);
+	}
 }
 
 function* word_search() {
@@ -147,7 +140,7 @@ function* all_simple_paths(start, length, trie) {
 	}
 
 	VISITED[start] = true;
-	for (var neighbor of neighborhood(start)) {
+	for (var neighbor of NEIGHBORHOOD[start]) {
 		if (!VISITED[neighbor] && WORD_GRID[neighbor] in trie) {
 			for (var path of all_simple_paths(neighbor, length + 1, trie)) {
 				yield WORD_GRID[start] + path;
@@ -157,11 +150,13 @@ function* all_simple_paths(start, length, trie) {
 	VISITED[start] = false;
 }
 
-function* neighborhood(vertex) {
+function neighborhood(vertex) {
+	neighbors = new Set();
 	var adjacency_list = JOINED[vertex];
 	for (var i=0; i<NUM_NODES; i++) {
 		if (adjacency_list[i]) {
-			yield i;
+			neighbors.add(i);
 		}
 	}
+	return neighbors;
 }
