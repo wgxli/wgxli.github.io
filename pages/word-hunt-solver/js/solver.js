@@ -6,27 +6,9 @@ var VISITED = [];
 var JOINED = [];
 
 var TABLE;
+var TRIE;
 
 const NUM_NODES = 16;
-
-const SEARCH_SPACE = [
-	0,
-	16,
-	100,
-	508,
-	2272,
-	8984,
-	31656,
-	99928,
-	283400,
-	720384,
-	1626160,
-	3220808,
-	5531072,
-	8175592,
-	10425784,
-	11686456
-];
 
 $(document).ready(function() {
 	for (var i=0; i<NUM_NODES; i++) {
@@ -58,7 +40,14 @@ $(document).ready(function() {
 			JOINED[d][c] = true;
 		}
 	}
+	$("textarea[name='grid']").on('input', solve);
+	$("input[name='min-length']").on('input', solve);
+	$("input[name='max-length']").on('input', solve);
+	solve();
 });
+
+
+
 
 function clear_table() {
 	$('tr.search-result').remove();
@@ -79,7 +68,6 @@ function add_table_entry(word) {
 }
 
 function add_entry_before(word, key) {
-	console.log(word + ', ' + key);
 	var entry_text = '<tr class="search-result" id="result-' + word + '"><td>' + word.length + '</td><td>' + word + '</td></tr>';
 	if (key != undefined) {
 		$('tr.search-result#result-' + key).before(entry_text);
@@ -89,69 +77,62 @@ function add_entry_before(word, key) {
 }
 
 function solve() {
-	if (get_input()) {
-		clear_table();
-		$('#submit').prop('disabled', true);
-		iterate_tree(word_search(), 0, new Set());
-	}
+	get_input();
+	clear_table();
+	var start_time = (new Date()).getTime();
+	words_found = iterate_tree(word_search(), 0, new Set());
+	var end_time = (new Date()).getTime();
+	var seconds_elapsed = (end_time - start_time)/1000;
+	console.log(`${words_found.size} words found in ${seconds_elapsed} seconds.`);
 }
 
 function iterate_tree(generator, index, found) {
 	for (i=0; i<1000; i++) {
 		var next_element = generator.next();
 		if (next_element.done) {
-			$('progress').attr('value', '1');
-			$('#status').text('Done!');
-			$('#submit').prop('disabled', false);
-			return;
+			return found;
 		}
 		var word = next_element.value;
-		if (word.length >= MIN_LENGTH && DICTIONARY.has(word)) {
+		if (word.length >= MIN_LENGTH) {
 			if (!found.has(word)) {
 				found.add(word);
 				add_table_entry(word);
 			}
 		}
 	}
-	index += 1000;
-	var completion = index / SEARCH_SPACE[MAX_LENGTH];
-	$('progress').attr('value', completion);
-	$('#status').text('Solving (' + Math.round(completion * 100) + '%)');
 	setTimeout(function() {iterate_tree(generator, index, found);}, 0);
 }
 
 function get_input() {
-	WORD_GRID = $("textarea[name='grid']").val().replace(/\n/g, '');
+	WORD_GRID = $("textarea[name='grid']").val().replace(/\n/g, '').toLowerCase();
 	MIN_LENGTH = parseInt($("input[name='min-length']").val());
 	MAX_LENGTH = parseInt($("input[name='max-length']").val());
 
-	if (WORD_GRID.length != NUM_NODES) {
-		$('#status').text('Error: Expected 16 letters, got ' + WORD_GRID.length + '.');
-		$('#status').attr('style', 'color: red');
-		return false;
-	} else {
-		$('#status').removeAttr('style');
-		return true;
+	while (WORD_GRID.length < NUM_NODES) {
+		WORD_GRID += '.';
 	}
 }
 
 function* word_search() {
 	for (var vertex=0; vertex<NUM_NODES; vertex++) {
-		yield* all_simple_paths(vertex, 0);
+		yield* all_simple_paths(vertex, 0, TRIE);
 	}
 }
 
-function* all_simple_paths(start, length) {
-	if (length >= MAX_LENGTH) {
+function* all_simple_paths(start, length, trie) {
+	if (length >= MAX_LENGTH || WORD_GRID[start] == '.') {
 		return;
 	}
+	trie = trie[WORD_GRID[start]]
 
-	yield WORD_GRID[start];
+	if ('eow' in trie) {
+		yield WORD_GRID[start];
+	}
 
 	VISITED[start] = true;
 	for (var neighbor of neighborhood(start)) {
-		if (!VISITED[neighbor]) {
-			for (var path of all_simple_paths(neighbor, length + 1)) {
+		if (!VISITED[neighbor] && WORD_GRID[neighbor] in trie) {
+			for (var path of all_simple_paths(neighbor, length + 1, trie)) {
 				yield WORD_GRID[start] + path;
 			}
 		}

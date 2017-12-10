@@ -9,9 +9,10 @@
 	integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
 	crossorigin='anonymous'></script>
 
+<script src='js/Queue.js'></script>
 <script src='js/solver.js'></script>
+<script src='js/trie.js'></script>
 <script src='js/dictionary.js'></script>
-<link rel='stylesheet' href='css/theme.css'>
 </head>
 
 <body>
@@ -20,18 +21,12 @@ Solves the iOS GamePigeon 'Word Hunt' game.
 
 <h2>Word Grid</h2>
 Enter the word grid here (4 lines, 4 letters per line):
-<form action='javascript:solve()'>
-	<textarea name='grid' rows='4' cols='10'></textarea>
-	<input type='submit' id='submit' value='Solve!'>
-</form>
+<br>
+<div><textarea name='grid' rows='4' cols='10'></textarea></div>
 
 <h2>Options</h2>
-Minimum word length: <input type='number' name='min-length' value='3' min='1' max='15'><br>
-Maximum word length: <input type='number' name='max-length' value='9' min='1' max='15'>
-
-<h2>Status</h2>
-<progress value='0' max='1'></progress>
-<p id='status'>Idle.</p>
+Minimum word length: <input type='number' name='min-length' value='3' min='1' max='16'><br>
+Maximum word length: <input type='number' name='max-length' value='9' min='1' max='16'>
 
 <h2>Results</h2>
 <table id='results'>
