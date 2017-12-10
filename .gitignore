@@ -1,3 +1,7 @@
-*~
-*.swp
-*.py
+*
+!.gitignore
+!*.html
+!*.htm
+!*.js
+!*.css
+!*/
