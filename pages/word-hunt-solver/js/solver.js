@@ -50,19 +50,16 @@ function solve() {
 	var start_time = (new Date()).getTime();
 	get_input();
 	clear_table();
-	words_found = iterate_tree(word_search(), 0, new Set());
+	words_found = iterate_tree(word_search());
 	var end_time = (new Date()).getTime();
 	var seconds_elapsed = (end_time - start_time)/1000;
 	console.log(`${words_found.size} words found in ${seconds_elapsed} seconds.`);
+	$('#num-results').text(`${words_found.size} words found.`);
 }
 
-function iterate_tree(generator, index, found) {
-	for (i=0; i<1000; i++) {
-		var next_element = generator.next();
-		if (next_element.done) {
-			return found;
-		}
-		var word = next_element.value;
+function iterate_tree(generator) {
+	found = new Set();
+	for (word of generator) {
 		if (word.length >= MIN_LENGTH) {
 			if (!found.has(word)) {
 				found.add(word);
@@ -70,7 +67,7 @@ function iterate_tree(generator, index, found) {
 			}
 		}
 	}
-	setTimeout(function() {iterate_tree(generator, index, found);}, 0);
+	return found;
 }
 
 function get_input() {
@@ -116,7 +113,7 @@ function* adjacent(i, rows) {
 
 function initialize_graph() {
 	var rows = WORD_GRID.split('\n').map(x => x.length);
-	WORD_GRID = WORD_GRID.replace('\n', '');
+	WORD_GRID = WORD_GRID.replace(/\n/g, '');
 	
 	NUM_NODES = WORD_GRID.length;
 	JOINED = [];
