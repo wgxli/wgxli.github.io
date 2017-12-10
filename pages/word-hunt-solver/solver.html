@@ -17,16 +17,18 @@
 
 <body>
 <h1>Word Hunt Solver</h1>
-Solves the iOS GamePigeon 'Word Hunt' game.
+Solves various "Word Hunt" style games.
+Words can be found by moving horizontally, vertially, or diagonally.
+Grids can be of any shape or size.
 
 <h2>Word Grid</h2>
-Enter the word grid here (4 lines, 4 letters per line):
+Enter the word grid here (one row per line, use spaces for empty squares):
 <br>
-<div><textarea name='grid' rows='4' cols='10'></textarea></div>
+<div><textarea name='grid' rows='15' cols='50'></textarea></div>
 
 <h2>Options</h2>
-Minimum word length: <input type='number' name='min-length' value='3' min='1' max='16'><br>
-Maximum word length: <input type='number' name='max-length' value='9' min='1' max='16'>
+Minimum word length: <input type='number' name='min-length' value='3' min='1'><br>
+Maximum word length: <input type='number' name='max-length' value='9' min='1'>
 
 <h2>Results</h2>
 <table id='results'>
