@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Hovercraft Calculator</title>
+
+<script
+	src='https://code.jquery.com/jquery-3.2.1.min.js'
+	integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+	crossorigin='anonymous'></script>
+
+<script src='js/calculator.js'></script>
+</head>
+
+<body>
+<h1>Hovercraft Calculator</h1>
+
+<h2>Options</h2>
+Length: <input id='length' value=40> cm<br>
+Width: <input id='width' value=40> cm<br>
+Mass: <input id='mass' value=2.5> kg<br>
+
+Voltage: <input id='voltage' value=1.5> V<br>
+Current: <input id='current' value=5> A<br>
+
+Fan Diameter: <input id='diameter' value=10> cm<br>
+Efficiency: <input id='efficiency' value=0.1><br>
+
+<h2>Results</h2>
+Pressure: <span id='pressure'></span> Pa <br>
+Flow Rate: <span id='flow-rate'></span> mL/s <br>
+Intake Velocity: <span id='intake-velocity'></span> m/s <br>
+Free-Body Thrust: <span id='thrust'></span> N <br>
+</html>
