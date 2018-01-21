@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Set Theory</title>
+<!-- Load jQuery -->
+<script
+	src='https://code.jquery.com/jquery-3.2.1.min.js'
+	integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='
+	crossorigin='anonymous'></script>
+
+<!-- Load KaTeX -->
+<link
+	rel='stylesheet'
+	href='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha1/katex.min.css'
+	integrity='sha384-8QOKbPtTFvh/lMY0qPVbXj9hDh+v8US0pD//FcoYFst2lCIf0BmT58+Heqj0IGyx'
+	crossorigin='anonymous'>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-alpha1/katex.min.js'
+	integrity='sha384-GR8SEkOO1rBN/jnOcQDFcFmwXAevSLx7/Io9Ps1rkxWp983ZIuUGfxivlF/5f5eJ'
+	crossorigin='anonymous'></script>
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta/contrib/auto-render.min.js'
+	integrity='sha384-EkJr57fExjeMKAZnlVBuoBoX0EJ4BiDPiAd/JyTzIA65ORu4hna7V6aaq4zsUvJ2'
+	crossorigin='anonymous'></script>
+
+<!-- Load Reveal.js -->
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js'
+	integrity='sha256-ixSKHrWAL2k0mqVSRju9+to2/uZSEK9+kJRfdNBolG8='
+	crossorigin='anonymous'></script>
+<link
+	rel='stylesheet'
+	href='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css'
+	integrity='sha256-ol2N5Xr80jdDqxK0lte3orKGb9Ja3sOnpAUV7TTADmg='
+	crossorigin='anonymous'>
+
+<!-- Load Paper.js -->
+<script	src='../../../js/paper-full.min.js'></script>
+
+<!-- Custom scripts -->
+<link rel='stylesheet' href='../css/presentation.css'>
+<script type='text/paperscript' src='paperscript/venn-diagram.js' canvas='venn-diagram'></script>
+<script type='text/paperscript' src='paperscript/set-builder-table.js' canvas='set-builder-table'></script>
+</head>
+
+<body>
+<div class='reveal'>
+<div class='slides'>
+
+<section>
+<h1>Set Theory</h1>
+</section>
+
+<section>
+<h2>What is a Set?</h2>
+<blockquote class='fragment'>&ldquo;A set is an <span class='fragment highlight-blue'>unordered</span> collection of <span class='fragment highlight-blue'>distinct</span> objects.&rdquo; &ndash;Wikipedia</blockquote>
+<p class='fragment'><b>Why</b> unordered?</p>
+<p class='fragment'><b>Why</b> distinct?</p>
+</section>
+
+<section>
+	<h2>Required Notation</h2>
+	\[A = \{1, 2, 3\}\]
+	\[\{1, 2, 3\} \subset \{1, 2, 3, 4\}\]
+	\[\{1, 2, 3\} \subseteq \{1, 2, 3\}\]
+	\[2 \in \{1, 2, 3\}\]
+	\[4 \notin \{1, 2, 3\}\]
+</section>
+
+<section>
+	<section>
+	<h3>Explicit Perspective</h3>
+	\[A = \{1, 2, 3\}\]
+
+	<div class='fragment'/>
+	<hr>
+	<h3>Implicit Perspective</h3>
+	\[1 \in A\]
+	\[2 \in A\]
+	\[3 \in A\]
+	\[4 \notin A\]
+	\[5 \notin A\]
+	\[\vdots\]
+	</div>
+	</section>
+
+	<section>
+	<h2>Unordered</h3>
+	\[A = \{1, 2, 3\} \qquad B = \{1, 3, 2\}\]
+
+	\[A \stackrel{?}{=} B\]
+
+	<div class='fragment'/>
+	<hr>
+	<table>
+		<tr>
+			<td>
+				\[1 \in A\]
+				\[2 \in A\]
+				\[3 \in A\]
+				\[4 \notin A\]
+				\[5 \notin A\]
+				\[\vdots\]
+			</td>
+			<td>
+				\[1 \in B\]
+				\[2 \in B\]
+				\[3 \in B\]
+				\[4 \notin B\]
+				\[5 \notin B\]
+				\[\vdots\]
+			</td>
+		</tr>
+	</table>
+	</section>
+
+	<section>
+	<h2>Distinct</h3>
+	\[A = \{1, 2, 3\} \qquad B = \{1, 2, 2, 3\}\]
+
+	\[A \stackrel{?}{=} B\]
+
+	<div class='fragment'/>
+	<hr>
+	<table>
+		<tr>
+			<td>
+				\[1 \in A\]
+				\[2 \in A\]
+				\[3 \in A\]
+				\[4 \notin A\]
+				\[5 \notin A\]
+				\[\vdots\]
+			</td>
+			<td>
+				\[1 \in B\]
+				\[2 \in B\]
+				\[3 \in B\]
+				\[4 \notin B\]
+				\[5 \notin B\]
+				\[\vdots\]
+			</td>
+		</tr>
+	</table>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Set Equality</h2>
+		\[\{1, 2, 3\} = \{1, 2, 2, 3\}\]
+		These sets contain the “same elements.”<br>
+		What do we mean?
+		<div class='fragment'>
+		<hr>
+		Suppose we had a set of everything; call it \(U\).
+		We would then go through every element \(x \in U\) and check to see that \(x\) is either in both sets or neither.
+		</div>
+	</section>
+	<section>
+		<h2>Definition of Set Equality</h2>
+		The problem is that for \(U\) to contain everything, we need \(U \in U\).
+		<div class='fragment'>
+		<hr>
+		To avoid this problem, we only need to check whether every element \(x \in A\) is also in \(B\), and vice-versa.
+		\[\boxed{A = B \iff A \subseteq B \land B \subseteq A}\]
+		</div>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Special Sets</h2>
+		\[\begin{aligned}
+		\emptyset &= \{\} \\
+		\mathbb{N} &= \{0, 1, 2, 3, 4, \dots\} \\
+		\mathbb{Z} &= \{\dots, -4, -3, -2, -1, 0, 1, 2, 3, 4, \dots\} \\
+		\mathbb{Q} &= \text{Fractions} \\
+		\mathbb{R} &= \text{Real Numbers} \\
+		\mathbb{C} &= \text{Complex Numbers} \\
+		\end{aligned}\]
+	</section>
+	<section>
+		<h2>Set-Builder Notation</h2>
+		\[S := \{x^2 : x \in \mathbb{N}\}\]
+		<canvas id='set-builder-table' width=700 height=200></canvas>
+	</section>
+
+	<section>
+		<h2>Review</h2>
+		Compute each of the following sets.
+		<br>
+		Note that \(\land\) denotes “and” and \(\lor\) denotes “or.”
+		<br>
+		<ol>
+			<li>\(\{x : \frac{x}{2} \in \mathbb{Z}\}\)</li>
+			<li>\(\{\sqrt{x} : x \in \mathbb{N} \land x < 5\}\)</li>
+			<li>\(\{x^3 : x \in [1, 3]\}\)</li>
+		</ol>
+		<hr>
+		Determine whether each statement is true or false.
+		<ol>
+			<li>\(2018 \in \{x + y\sqrt{2} : x, y \in \mathbb{Z}\}\)</li>
+			<li>\(\mathbb{Q} = \{\frac{x}{y} : x, y \in \mathbb{N}\}\)</li>
+		</ol>
+
+	</section>
+</section>
+
+
+
+<section>
+	<section>
+		<h3>Set Operations</h3>
+		<canvas id='venn-diagram' width=500 height=400></canvas>
+		<p id='venn-label'></p>
+	</section>
+
+	<section>
+		<h2>Review</h2>
+		Label each statement as true or false.
+		<br>
+		A statement is true if it holds for <u>every</u> set \(A\) and \(B\).
+		<br>
+		<ol>
+			<li>\(A \cup B = B \cup A\)</li>
+			<li>\(A = (A^\complement)^\complement\)</li>
+			<li>\(A \cup B = \{x : x \in A \lor x \in B\}\)</li>
+			<li>\(A \cup A^\complement = U\)</li>
+			<li>\(A \subset A \cup B\)</li>
+			<li>\((A \cup B)^\complement = A^\complement \cap B^\complement\)</li>
+		</ol>
+	</section>
+</section>
+
+<section>
+	<h2>Cardinality</h2>
+	What is the cardinality of a set?
+	\[\lvert\{1, 2, 3\}\rvert = 3\]
+	<p class='fragment'>\[\{1, 2, 3\} = \{1, 2, 2, 3\}\]</p>
+	<p class='fragment'>\[\lvert\{1, 2, 2, 3\}\rvert = 3?\]</p>
+</section>
+
+</div>
+</div>
+<script>
+Reveal.initialize({
+	mouseWheel: true,
+	controlsTutorial: false,
+	history: true,
+	width: '100%',
+	height: '100%',
+	margin: 0,
+	minScale: 1,
+	maxScale: 1
+});
+renderMathInElement(document.body);
+</script>
+</body>
+</html>
