@@ -35,7 +35,7 @@
 	crossorigin='anonymous'>
 
 <!-- Load Paper.js -->
-<script	src='../../../js/paper-full.min.js'></script>
+<script	src='/js/paper-full.min.js'></script>
 
 <!-- Custom scripts -->
 <link rel='stylesheet' href='../css/presentation.css'>
@@ -129,7 +129,7 @@
 	</section>
 
 	<section>
-		<canvas id='venn-diagram' width=600 height=480></canvas>
+		<canvas id='venn-diagram' width=600 height=480 style='max-width: 90%'></canvas>
 		<p id='venn-label'></p>
 	</section>
 
@@ -143,7 +143,7 @@
 			<h4>Sidenote</h4>
 			The Venn diagram is available at
 			<br>
-			<a href='http://bit.ly/venn-diagram'>http://bit.ly/venn-diagram</a>
+			<a href='https://bit.ly/venn-diagram'>bit.ly/venn-diagram</a>
 		</div>
 	</section>
 
@@ -430,7 +430,8 @@ Reveal.initialize({
 	height: '100%',
 	margin: 0,
 	minScale: 1,
-	maxScale: 1
+	maxScale: 1,
+	touch: true
 });
 renderMathInElement(document.body);
 </script>
