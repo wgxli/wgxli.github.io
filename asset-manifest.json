@@ -1,9 +1,10 @@
 {
-  "main.css": "static/css/main.ebfcd8ac.css",
-  "main.css.map": "static/css/main.ebfcd8ac.css.map",
-  "main.js": "static/js/main.01f1d23c.js",
-  "main.js.map": "static/js/main.01f1d23c.js.map",
+  "main.css": "static/css/main.4cfeeeaa.css",
+  "main.css.map": "static/css/main.4cfeeeaa.css.map",
+  "main.js": "static/js/main.3fe50ef9.js",
+  "main.js.map": "static/js/main.3fe50ef9.js.map",
   "static/media/complex-function-plotter.png": "static/media/complex-function-plotter.ddd87a3e.png",
   "static/media/github.svg": "static/media/github.62367fef.svg",
-  "static/media/linkedin.svg": "static/media/linkedin.02b94020.svg"
+  "static/media/linkedin.svg": "static/media/linkedin.02b94020.svg",
+  "static/media/quantum-simulator.png": "static/media/quantum-simulator.b0db05a0.png"
 }
