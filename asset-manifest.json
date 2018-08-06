@@ -1,13 +1,14 @@
 {
   "main.css": "static/css/main.fd7b478a.css",
   "main.css.map": "static/css/main.fd7b478a.css.map",
-  "main.js": "static/js/main.db4487da.js",
-  "main.js.map": "static/js/main.db4487da.js.map",
+  "main.js": "static/js/main.f8f26517.js",
+  "main.js.map": "static/js/main.f8f26517.js.map",
   "static/media/banner-image-compressed.jpg": "static/media/banner-image-compressed.4aa58350.jpg",
   "static/media/complex-function-plotter-compressed.jpg": "static/media/complex-function-plotter-compressed.2f708490.jpg",
   "static/media/down-arrow.svg": "static/media/down-arrow.da3d1537.svg",
   "static/media/github.svg": "static/media/github.62367fef.svg",
   "static/media/linkedin.svg": "static/media/linkedin.02b94020.svg",
   "static/media/quantum-simulator-compressed.png": "static/media/quantum-simulator-compressed.adda1f0b.png",
+  "static/media/simpletex-compressed.png": "static/media/simpletex-compressed.ae81953b.png",
   "static/media/toronto-blurred.jpg": "static/media/toronto-blurred.063c2e83.jpg"
 }
