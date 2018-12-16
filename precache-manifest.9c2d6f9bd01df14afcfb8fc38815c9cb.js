@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/github.62367fef.svg"
   },
   {
-    "revision": "65cc3475207b6880c3af",
-    "url": "/static/css/main.fe65852f.chunk.css"
+    "revision": "b2dcbe99a9b96eebeab1",
+    "url": "/static/css/main.f2e9ad2d.chunk.css"
   },
   {
     "revision": "e7e383648875bf0d99f2",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/static/media/banner-image-compressed.4aa58350.jpg"
   },
   {
-    "revision": "65cc3475207b6880c3af",
-    "url": "/static/js/main.65cc3475.chunk.js"
+    "revision": "b2dcbe99a9b96eebeab1",
+    "url": "/static/js/main.b2dcbe99.chunk.js"
   },
   {
     "revision": "02b940201e6b2ee3204aa1bd6e7a0f2c",
@@ -48,11 +48,15 @@ self.__precacheManifest = [
     "url": "/static/media/latex-scratchpad.caf7baa6.png"
   },
   {
+    "revision": "e839ea7c2e9d1f7b8a3ff8a4416ce5ee",
+    "url": "/static/media/hs-teaching-aid.e839ea7c.png"
+  },
+  {
     "revision": "ae81953b251c6382cd01f5f32d615c39",
     "url": "/static/media/simpletex-compressed.ae81953b.png"
   },
   {
-    "revision": "5c91b31b8dbaacf2325bf87d3ac5d912",
+    "revision": "0495f181ded8ab62dbc940d89d4bd25f",
     "url": "/index.html"
   }
 ];
