@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "4aa5835042b60aff054b18de261ecaf8",
-    "url": "/static/media/banner-image-compressed.4aa58350.jpg"
+    "revision": "62367fef543703541320e221fa7b3c03",
+    "url": "/static/media/github.62367fef.svg"
   },
   {
-    "revision": "5d3fb38727a478efc407",
-    "url": "/static/css/main.2728249e.chunk.css"
+    "revision": "65cc3475207b6880c3af",
+    "url": "/static/css/main.fe65852f.chunk.css"
   },
   {
     "revision": "e7e383648875bf0d99f2",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/static/media/toronto-blurred.063c2e83.jpg"
   },
   {
-    "revision": "5d3fb38727a478efc407",
-    "url": "/static/js/main.5d3fb387.chunk.js"
+    "revision": "4aa5835042b60aff054b18de261ecaf8",
+    "url": "/static/media/banner-image-compressed.4aa58350.jpg"
   },
   {
-    "revision": "62367fef543703541320e221fa7b3c03",
-    "url": "/static/media/github.62367fef.svg"
+    "revision": "65cc3475207b6880c3af",
+    "url": "/static/js/main.65cc3475.chunk.js"
   },
   {
     "revision": "02b940201e6b2ee3204aa1bd6e7a0f2c",
@@ -44,11 +44,15 @@ self.__precacheManifest = [
     "url": "/static/media/quantum-simulator-compressed.adda1f0b.png"
   },
   {
+    "revision": "caf7baa6547681e2c28ddc08efc274e1",
+    "url": "/static/media/latex-scratchpad.caf7baa6.png"
+  },
+  {
     "revision": "ae81953b251c6382cd01f5f32d615c39",
     "url": "/static/media/simpletex-compressed.ae81953b.png"
   },
   {
-    "revision": "bf22ad1549aaee958a0e2f30285fbe8e",
+    "revision": "5c91b31b8dbaacf2325bf87d3ac5d912",
     "url": "/index.html"
   }
 ];
