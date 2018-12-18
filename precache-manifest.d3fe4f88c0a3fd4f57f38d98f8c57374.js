@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/github.62367fef.svg"
   },
   {
-    "revision": "b2dcbe99a9b96eebeab1",
+    "revision": "2aae21140c476de8b65c",
     "url": "/static/css/main.f2e9ad2d.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/static/media/banner-image-compressed.4aa58350.jpg"
   },
   {
-    "revision": "b2dcbe99a9b96eebeab1",
-    "url": "/static/js/main.b2dcbe99.chunk.js"
+    "revision": "2aae21140c476de8b65c",
+    "url": "/static/js/main.2aae2114.chunk.js"
   },
   {
     "revision": "02b940201e6b2ee3204aa1bd6e7a0f2c",
@@ -44,19 +44,19 @@ self.__precacheManifest = [
     "url": "/static/media/quantum-simulator-compressed.adda1f0b.png"
   },
   {
-    "revision": "caf7baa6547681e2c28ddc08efc274e1",
-    "url": "/static/media/latex-scratchpad.caf7baa6.png"
+    "revision": "a55362c6366dae4a2e0b6b97d9d399fe",
+    "url": "/static/media/latex-scratchpad.a55362c6.png"
   },
   {
-    "revision": "e839ea7c2e9d1f7b8a3ff8a4416ce5ee",
-    "url": "/static/media/hs-teaching-aid.e839ea7c.png"
+    "revision": "160eaf35fccdba13302c3e638b5f23b9",
+    "url": "/static/media/hs-teaching-aid.160eaf35.png"
   },
   {
-    "revision": "ae81953b251c6382cd01f5f32d615c39",
-    "url": "/static/media/simpletex-compressed.ae81953b.png"
+    "revision": "6505ef768caa7586155317de582716ff",
+    "url": "/static/media/simpletex-compressed.6505ef76.png"
   },
   {
-    "revision": "0495f181ded8ab62dbc940d89d4bd25f",
+    "revision": "f961ce70ef42ddbc612bb876a442c1eb",
     "url": "/index.html"
   }
 ];
