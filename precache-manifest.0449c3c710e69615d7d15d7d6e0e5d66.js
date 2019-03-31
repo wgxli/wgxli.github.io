@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "02b940201e6b2ee3204aa1bd6e7a0f2c",
-    "url": "/static/media/linkedin.02b94020.svg"
+    "revision": "f9e319dfa33adf948b7c4b61185bf22c",
+    "url": "/static/media/hopf-fibration-compressed.f9e319df.jpg"
   },
   {
-    "revision": "842381b6a5b7dd2c2396",
-    "url": "/static/css/main.057a1ae1.chunk.css"
+    "revision": "78453d871cf5a80ec395",
+    "url": "/static/css/main.2be0dd18.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -32,12 +32,12 @@ self.__precacheManifest = [
     "url": "/static/media/github.62367fef.svg"
   },
   {
-    "revision": "842381b6a5b7dd2c2396",
-    "url": "/static/js/main.27a475ea.chunk.js"
+    "revision": "02b940201e6b2ee3204aa1bd6e7a0f2c",
+    "url": "/static/media/linkedin.02b94020.svg"
   },
   {
-    "revision": "f9e319dfa33adf948b7c4b61185bf22c",
-    "url": "/static/media/hopf-fibration-compressed.f9e319df.jpg"
+    "revision": "78453d871cf5a80ec395",
+    "url": "/static/js/main.6a2fb9fc.chunk.js"
   },
   {
     "revision": "2f708490fb26237452a106d21a297c94",
@@ -56,6 +56,10 @@ self.__precacheManifest = [
     "url": "/static/media/hs-teaching-aid.160eaf35.png"
   },
   {
+    "revision": "828c06498be74961b5745614145be619",
+    "url": "/static/media/piano-transcription.828c0649.png"
+  },
+  {
     "revision": "6505ef768caa7586155317de582716ff",
     "url": "/static/media/simpletex-compressed.6505ef76.png"
   },
@@ -64,7 +68,7 @@ self.__precacheManifest = [
     "url": "/static/media/raytracer-compressed.f0c02b16.jpg"
   },
   {
-    "revision": "68542643f74c57e10a49a42a83b7f7d0",
+    "revision": "dfb49a0a8c7e858321de151a9b0c2f7e",
     "url": "/index.html"
   }
 ];
