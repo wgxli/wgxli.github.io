@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/hopf-fibration-compressed.f9e319df.jpg"
   },
   {
-    "revision": "78453d871cf5a80ec395",
+    "revision": "bac021ef7a51a53252c5",
     "url": "/static/css/main.2be0dd18.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/static/media/linkedin.02b94020.svg"
   },
   {
-    "revision": "78453d871cf5a80ec395",
-    "url": "/static/js/main.6a2fb9fc.chunk.js"
+    "revision": "bac021ef7a51a53252c5",
+    "url": "/static/js/main.542f27b4.chunk.js"
   },
   {
     "revision": "2f708490fb26237452a106d21a297c94",
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/static/media/hs-teaching-aid.160eaf35.png"
   },
   {
-    "revision": "828c06498be74961b5745614145be619",
-    "url": "/static/media/piano-transcription.828c0649.png"
+    "revision": "53d8263b17416b8ae485271727e3e758",
+    "url": "/static/media/piano-transcription-compressed.53d8263b.jpg"
   },
   {
     "revision": "6505ef768caa7586155317de582716ff",
@@ -68,7 +68,7 @@ self.__precacheManifest = [
     "url": "/static/media/raytracer-compressed.f0c02b16.jpg"
   },
   {
-    "revision": "dfb49a0a8c7e858321de151a9b0c2f7e",
+    "revision": "a1fd510fbad57f474788e56a7c0e8b0b",
     "url": "/index.html"
   }
 ];
