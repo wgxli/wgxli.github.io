@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "f9e319dfa33adf948b7c4b61185bf22c",
-    "url": "/static/media/hopf-fibration-compressed.f9e319df.jpg"
+    "revision": "3d4f1fbd031faae0fcbb523b70972f7b",
+    "url": "/static/media/reddit.3d4f1fbd.svg"
   },
   {
-    "revision": "08dc7b3ee7eace419ae2",
-    "url": "/static/css/main.057a1ae1.chunk.css"
+    "revision": "0c12320de5c753b68e67",
+    "url": "/static/css/main.2894d745.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.c5541365.js"
   },
   {
-    "revision": "6bb504c2da55512f2665",
-    "url": "/static/js/2.ca225d49.chunk.js"
+    "revision": "e8e305c1950731473afd",
+    "url": "/static/js/2.1a9262a2.chunk.js"
   },
   {
     "revision": "da3d15378cffc0fca0fc915eef92ddcb",
@@ -36,8 +36,16 @@ self.__precacheManifest = [
     "url": "/static/media/linkedin.02b94020.svg"
   },
   {
-    "revision": "08dc7b3ee7eace419ae2",
-    "url": "/static/js/main.41baa7c5.chunk.js"
+    "revision": "63156d66c1bb95a349cfe5a546bda3ac",
+    "url": "/static/media/github.63156d66.svg"
+  },
+  {
+    "revision": "0c12320de5c753b68e67",
+    "url": "/static/js/main.cd4cf546.chunk.js"
+  },
+  {
+    "revision": "f9e319dfa33adf948b7c4b61185bf22c",
+    "url": "/static/media/hopf-fibration-compressed.f9e319df.jpg"
   },
   {
     "revision": "2f708490fb26237452a106d21a297c94",
@@ -68,7 +76,7 @@ self.__precacheManifest = [
     "url": "/static/media/raytracer-compressed.f0c02b16.jpg"
   },
   {
-    "revision": "97dc3b9708509a77dd0d39d609ad7d46",
+    "revision": "6aba227fcf42eb92787f45422cdfdb4f",
     "url": "/index.html"
   }
 ];
