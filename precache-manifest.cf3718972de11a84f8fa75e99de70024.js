@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/hopf-fibration-compressed.f9e319df.jpg"
   },
   {
-    "revision": "bac021ef7a51a53252c5",
-    "url": "/static/css/main.2be0dd18.chunk.css"
+    "revision": "08dc7b3ee7eace419ae2",
+    "url": "/static/css/main.057a1ae1.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/static/media/linkedin.02b94020.svg"
   },
   {
-    "revision": "bac021ef7a51a53252c5",
-    "url": "/static/js/main.542f27b4.chunk.js"
+    "revision": "08dc7b3ee7eace419ae2",
+    "url": "/static/js/main.41baa7c5.chunk.js"
   },
   {
     "revision": "2f708490fb26237452a106d21a297c94",
@@ -68,7 +68,7 @@ self.__precacheManifest = [
     "url": "/static/media/raytracer-compressed.f0c02b16.jpg"
   },
   {
-    "revision": "a1fd510fbad57f474788e56a7c0e8b0b",
+    "revision": "97dc3b9708509a77dd0d39d609ad7d46",
     "url": "/index.html"
   }
 ];
