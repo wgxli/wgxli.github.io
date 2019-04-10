@@ -4,28 +4,32 @@ self.__precacheManifest = [
     "url": "/static/media/reddit.3d4f1fbd.svg"
   },
   {
-    "revision": "da9b3088999f7f83c960",
-    "url": "/static/css/main.e19f11a8.chunk.css"
+    "revision": "d973429574da26675f81",
+    "url": "/static/css/main.deef41b4.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.c5541365.js"
   },
   {
-    "revision": "e8e305c1950731473afd",
-    "url": "/static/js/2.1a9262a2.chunk.js"
+    "revision": "0f7ce264fb083b337b52",
+    "url": "/static/js/2.107a9a15.chunk.js"
   },
   {
     "revision": "da3d15378cffc0fca0fc915eef92ddcb",
     "url": "/static/media/down-arrow.da3d1537.svg"
   },
   {
+    "revision": "4aa5835042b60aff054b18de261ecaf8",
+    "url": "/static/media/banner-image-compressed.4aa58350.jpg"
+  },
+  {
     "revision": "063c2e8393009c6a0cb5314a3db92b23",
     "url": "/static/media/toronto-blurred.063c2e83.jpg"
   },
   {
-    "revision": "4aa5835042b60aff054b18de261ecaf8",
-    "url": "/static/media/banner-image-compressed.4aa58350.jpg"
+    "revision": "df159ec602d6686db9057b08252ab7e4",
+    "url": "/static/media/typing-blurred.df159ec6.jpg"
   },
   {
     "revision": "62367fef543703541320e221fa7b3c03",
@@ -40,8 +44,8 @@ self.__precacheManifest = [
     "url": "/static/media/github.63156d66.svg"
   },
   {
-    "revision": "da9b3088999f7f83c960",
-    "url": "/static/js/main.5049b61f.chunk.js"
+    "revision": "d973429574da26675f81",
+    "url": "/static/js/main.1c47b47f.chunk.js"
   },
   {
     "revision": "f9e319dfa33adf948b7c4b61185bf22c",
@@ -76,7 +80,15 @@ self.__precacheManifest = [
     "url": "/static/media/raytracer-compressed.f0c02b16.jpg"
   },
   {
-    "revision": "f3d93e362d64bcac191b6e738389eb5d",
+    "revision": "09d441de524285b60f0e2e2a77688b3b",
+    "url": "/static/media/email.09d441de.svg"
+  },
+  {
+    "revision": "2b738366db5de0036e75a84aae08e829",
+    "url": "/static/media/phone.2b738366.svg"
+  },
+  {
+    "revision": "dfe10e43f4a1e2417a0d0d4231418af9",
     "url": "/index.html"
   }
 ];
