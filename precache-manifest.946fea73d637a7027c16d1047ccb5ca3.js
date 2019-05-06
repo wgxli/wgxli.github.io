@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "3d4f1fbd031faae0fcbb523b70972f7b",
-    "url": "/static/media/reddit.3d4f1fbd.svg"
+    "revision": "1ed84f0e2be1eba2c6918ab66ad0898c",
+    "url": "/static/media/elliptic-curve-explorer-compressed.1ed84f0e.jpg"
   },
   {
-    "revision": "8fc264b264d03c25cd65",
+    "revision": "c56d3672fb436235b28b",
     "url": "/static/css/main.0d013a1b.chunk.css"
   },
   {
@@ -44,8 +44,12 @@ self.__precacheManifest = [
     "url": "/static/media/github.63156d66.svg"
   },
   {
-    "revision": "8fc264b264d03c25cd65",
-    "url": "/static/js/main.24a085a5.chunk.js"
+    "revision": "3d4f1fbd031faae0fcbb523b70972f7b",
+    "url": "/static/media/reddit.3d4f1fbd.svg"
+  },
+  {
+    "revision": "c56d3672fb436235b28b",
+    "url": "/static/js/main.b6bb19e7.chunk.js"
   },
   {
     "revision": "f9e319dfa33adf948b7c4b61185bf22c",
@@ -88,7 +92,7 @@ self.__precacheManifest = [
     "url": "/static/media/phone.2b738366.svg"
   },
   {
-    "revision": "0dd4589be566089d34981847cc307886",
+    "revision": "73cfcf8c5625e97a761bb2398d139f8c",
     "url": "/index.html"
   }
 ];
