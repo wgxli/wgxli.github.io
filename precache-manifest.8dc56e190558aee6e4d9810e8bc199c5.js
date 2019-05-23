@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "1ed84f0e2be1eba2c6918ab66ad0898c",
-    "url": "/static/media/elliptic-curve-explorer-compressed.1ed84f0e.jpg"
+    "revision": "3d4f1fbd031faae0fcbb523b70972f7b",
+    "url": "/static/media/reddit.3d4f1fbd.svg"
   },
   {
-    "revision": "980097fc9a9a8e3d4252",
-    "url": "/static/css/main.7a633aa2.chunk.css"
+    "revision": "057bbbeec1d186cda9ac",
+    "url": "/static/css/main.3bb145cb.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
     "url": "/static/js/runtime~main.c5541365.js"
   },
   {
-    "revision": "0f7ce264fb083b337b52",
-    "url": "/static/js/2.107a9a15.chunk.js"
+    "revision": "0bde6c411e1c52d1d715",
+    "url": "/static/js/2.9cb4ae62.chunk.js"
   },
   {
     "revision": "da3d15378cffc0fca0fc915eef92ddcb",
@@ -28,10 +28,6 @@ self.__precacheManifest = [
     "url": "/static/media/toronto-blurred.70f48709.jpg"
   },
   {
-    "revision": "09fd0995dc6c8201dedcb2c4fedd8e4b",
-    "url": "/static/media/typing-blurred.09fd0995.jpg"
-  },
-  {
     "revision": "62367fef543703541320e221fa7b3c03",
     "url": "/static/media/github.62367fef.svg"
   },
@@ -44,12 +40,12 @@ self.__precacheManifest = [
     "url": "/static/media/github.63156d66.svg"
   },
   {
-    "revision": "3d4f1fbd031faae0fcbb523b70972f7b",
-    "url": "/static/media/reddit.3d4f1fbd.svg"
+    "revision": "057bbbeec1d186cda9ac",
+    "url": "/static/js/main.a39dd044.chunk.js"
   },
   {
-    "revision": "980097fc9a9a8e3d4252",
-    "url": "/static/js/main.139d69d2.chunk.js"
+    "revision": "1ed84f0e2be1eba2c6918ab66ad0898c",
+    "url": "/static/media/elliptic-curve-explorer-compressed.1ed84f0e.jpg"
   },
   {
     "revision": "f9e319dfa33adf948b7c4b61185bf22c",
@@ -84,15 +80,7 @@ self.__precacheManifest = [
     "url": "/static/media/raytracer-compressed.f0c02b16.jpg"
   },
   {
-    "revision": "09d441de524285b60f0e2e2a77688b3b",
-    "url": "/static/media/email.09d441de.svg"
-  },
-  {
-    "revision": "2b738366db5de0036e75a84aae08e829",
-    "url": "/static/media/phone.2b738366.svg"
-  },
-  {
-    "revision": "e7f4c2465c77461e1cb50de3715399af",
+    "revision": "2aa16b953d7666de9546f4c8fc7ee1c5",
     "url": "/index.html"
   }
 ];
