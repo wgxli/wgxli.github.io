@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/reddit.3d4f1fbd.svg"
   },
   {
-    "revision": "057bbbeec1d186cda9ac",
-    "url": "/static/css/main.3bb145cb.chunk.css"
+    "revision": "04e6cb3e4b6f83c35341",
+    "url": "/static/css/main.24921cbb.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/static/js/2.9cb4ae62.chunk.js"
   },
   {
-    "revision": "da3d15378cffc0fca0fc915eef92ddcb",
-    "url": "/static/media/down-arrow.da3d1537.svg"
+    "revision": "b63a6dc077bb11136bb48fede8e78c30",
+    "url": "/static/media/down-arrow.b63a6dc0.svg"
   },
   {
     "revision": "8e1b1e95a0381f000a58d2befdd5c575",
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/static/media/github.63156d66.svg"
   },
   {
-    "revision": "057bbbeec1d186cda9ac",
-    "url": "/static/js/main.a39dd044.chunk.js"
+    "revision": "04e6cb3e4b6f83c35341",
+    "url": "/static/js/main.50e629ce.chunk.js"
   },
   {
     "revision": "1ed84f0e2be1eba2c6918ab66ad0898c",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/static/media/raytracer-compressed.f0c02b16.jpg"
   },
   {
-    "revision": "2aa16b953d7666de9546f4c8fc7ee1c5",
+    "revision": "c79ec2fb79b3fdc481a805da2efa8afc",
     "url": "/index.html"
   }
 ];
