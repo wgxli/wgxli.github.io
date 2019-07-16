@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/static/media/reddit.3d4f1fbd.svg"
   },
   {
-    "revision": "c69e8af5d84cabd6ff20",
-    "url": "/static/css/main.bc4ca3db.chunk.css"
+    "revision": "e3fdd07bb8b266cb2e06",
+    "url": "/static/css/main.1e403d03.chunk.css"
   },
   {
     "revision": "fdfcfda2d9b1bf31db52",
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/static/media/down-arrow.b63a6dc0.svg"
   },
   {
-    "revision": "8e1b1e95a0381f000a58d2befdd5c575",
-    "url": "/static/media/banner-image-compressed.8e1b1e95.jpg"
+    "revision": "45ba3556730e5f15be007e0f7d8a0e61",
+    "url": "/static/media/banner-image-compressed.45ba3556.jpg"
   },
   {
     "revision": "70f48709377cfd9f73f9f471eefd3344",
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/static/media/github.63156d66.svg"
   },
   {
-    "revision": "c69e8af5d84cabd6ff20",
-    "url": "/static/js/main.5baec8d4.chunk.js"
+    "revision": "e3fdd07bb8b266cb2e06",
+    "url": "/static/js/main.ea9284eb.chunk.js"
   },
   {
     "revision": "1ed84f0e2be1eba2c6918ab66ad0898c",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/static/media/raytracer-compressed.f0c02b16.jpg"
   },
   {
-    "revision": "0ce6cf27889cc268f002d767e8b2b9da",
+    "revision": "0a7b610d7e78ad694816f29b2f5c2377",
     "url": "/index.html"
   }
 ];
