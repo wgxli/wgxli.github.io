@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/static/media/raytracer-compressed.f0c02b16.jpg"
   },
   {
-    "revision": "ab1780f962886340ff4fdacd5411f0c6",
+    "revision": "4881cb035879705f44a2e0422eece8c1",
     "url": "/index.html"
   }
 ];
