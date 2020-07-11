@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: samuelj.li
-Token: 8dbdf57cfb948d5d78be8821741fc940772322570aeb545a4eeb863068aa59ed
