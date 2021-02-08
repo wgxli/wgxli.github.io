@@ -1,0 +1,27 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+# Contact
+general: contact@samuelj.li
+bug reports: bug.report@samuelj.li
+
+# Donation Addresses
+btc: bc1qxz44ehw2c77mywa5f3xj44s28g48rsukpmhxsu
+eth: 0x224A5dB95198e69ebE2489Bb6224fE60b9477647
+doge: D6cH6kvzdi9Y3DMQe4iMqV4kgwMRbRNVje
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEW7Fma9ZErRGViVTvggu/Vb4B7qIFAmAgh+4ACgkQggu/Vb4B
+7qLtlQ//b0+xNQcyk93DmlwxHJn3feEAKSb7/xwYqb1XmvmJX+BROPL+zRmzPD9z
+aik9KgmBNasilBp2LGpaDDwhNTxc+Y2iTdK0sjEy9d/BXE54GbmCH/g3qksHVlYC
+G4Zx5gy0bsjyhtt2Pd2c85gOaFqjG8JzIx69fRs9fR8OeOmUFsRgQvnMcjFGzKDV
+pLIRC8BekVAixOy9xl3VIRur3vqusGLW6qzYxXBmeHYzO3FjYLkS+LTDo8OJBqmj
+E6PTuwdk0mUfE1xDFeY4sVQ3SIMcdA8ajMy1RZ7k4vwHBopa6/DJZu44D3cpeRpE
+9VMty+yFSRhr5RjmHnxHaW/rKobcaEvAOICMgJ4XVYs3LALHsYSevVbh8MYqgCb4
+WuSc2oN5Q9qa1CGePxBujhZWEK4KnxLVNK734wvT4oRqAzOtTSVxnEMO8c4yvMcn
+YXTWO4sM9DKAVg9D3F4icIioUc0eeCLTXqhLFerwUq96hSYeJMkbbQYqWfkarLNR
+jl25Luq6cc/L0V2Vt9mXF/RGt0kTt+Wi+Yk/uMTAUD9xhoht+Ebz1hZMjQ77ozBA
+prrGtV+8Drp5BnmYEDI2nzjOcDHaorH3HNp5XtzF7lH+VudUVbRXd0MTOyxRgrEg
+LyOPbq2pOx51tGCi4vmFtzkJ4IpvNxAQ8ZsxyqVV3f1Pu+FN8p8=
+=cfvo
+-----END PGP SIGNATURE-----
