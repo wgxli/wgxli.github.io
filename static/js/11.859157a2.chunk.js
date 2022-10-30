@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{457:function(e,r,t){"use strict";t.r(r);var o=t(0),c=t.n(o);t(560);r.default=function(){return c.a.createElement("div",{id:"cone-eversion"},c.a.createElement("iframe",{title:"video",src:"https://www.youtube.com/embed/DMO9Qg3fGVg",frameborder:"0",allow:"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",allowfullscreen:!0}))}},560:function(e,r,t){}}]);
-//# sourceMappingURL=11.859157a2.chunk.js.map
