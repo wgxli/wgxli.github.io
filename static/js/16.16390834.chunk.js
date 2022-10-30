@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{440:function(e,t,r){"use strict";r.r(t);var a=r(0),n=r.n(a);t.default=function(){return n.a.createElement(n.a.Fragment,null,n.a.createElement("iframe",{width:"700",height:"394",src:"https://www.youtube.com/embed/DMO9Qg3fGVg",title:"A Cone Eversion",frameborder:"0",allow:"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",allowfullscreen:!0}))}}}]);
-//# sourceMappingURL=16.16390834.chunk.js.map
