@@ -220,7 +220,7 @@ self.__precacheManifest = [
     "url": "/static/media/128-raw-fit-mobile.7f718fff.svg"
   },
   {
-    "revision": "bd0e1be7749dbb91eb946199c18b2410",
+    "revision": "462cb96356c78e8261005c50ee637a05",
     "url": "/index.html"
   }
 ];
