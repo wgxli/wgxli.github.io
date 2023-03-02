@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[19],{438:function(e,n,a){"use strict";a.r(n);var t=a(0),i=a.n(t);n.default=function(){return i.a.createElement(i.a.Fragment,null,i.a.createElement("p",null,"I recently found a paper titled \u2018",i.a.createElement("a",{href:"https://www.jstor.org/stable/2974859"},"A Cone Eversion"),",\u2019 by S. Tabachnikov. I found it a bit difficult to see what was happening in 3D, so I made a visualization. Enjoy!"))}}}]);
+//# sourceMappingURL=19.a8c417dd.chunk.js.map
