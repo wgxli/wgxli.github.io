@@ -1,0 +1,2 @@
+import{j as t}from"./index-C71_ZyU6.js";function n(){return t.jsx(t.Fragment,{children:t.jsxs("p",{children:["I recently found a paper titled ‘",t.jsx("a",{href:"https://www.jstor.org/stable/2974859",children:"A Cone Eversion"}),",’ by S. Tabachnikov. I found it a bit difficult to see what was happening in 3D, so I made a visualization. Enjoy!"]})})}export{n as default};
+//# sourceMappingURL=intro-xHpg19sC.js.map
