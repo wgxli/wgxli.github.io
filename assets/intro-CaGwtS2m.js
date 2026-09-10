@@ -1,0 +1,2 @@
+import{j as e}from"./index-DFQelQQ0.js";function i(){return e.jsxs(e.Fragment,{children:[e.jsx("p",{children:"As part of a project, I needed to compute the probability of a large integer being \\(B\\)-smooth, conditional on knowledge about the sizes of its prime factors. I found very little information about this problem in the literature."}),e.jsx("p",{children:"This post (1) solves this problem with high accuracy, and (2) verifies the theoretical results experimentally."})]})}export{i as default};
+//# sourceMappingURL=intro-CaGwtS2m.js.map
