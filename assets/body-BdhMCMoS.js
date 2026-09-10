@@ -1,0 +1,32 @@
+import{j as e}from"./index-D93Lbq-i.js";import{a as n,R as t,F as s,b as i}from"./util-j3HGFW-S.js";const r="/assets/base_prob-fs8-C9ndz_Lx.png",a="/assets/cond_prob-fs8-B-qD-k1s.png",o="/assets/exp_results-fs8-BT_bGs9Z.png";function c(){return e.jsxs(e.Fragment,{children:[e.jsx("h2",{children:"Problem Statement"}),e.jsx("p",{children:"Choose an integer uniformly at random from the interval \\([N, N + L]\\), where \\(N \\gg L\\). Given that the integer \\(N\\) has no prime factors in an interval \\([B_0, B_1]\\), what is the (conditional) probability that it is \\(B\\)-smooth?"}),e.jsxs("p",{children:["This problem can be easily extended to e.g. restrict prime factors to multiple subintervals. For simplicity, we will analyze the single-interval problem above. In what follows, we assume that ",String.raw`\(B_0 < B_1 < B\)`,"."]}),e.jsx("h2",{children:"Solution"}),e.jsx("p",{children:"Let \\(K(a, b) \\subseteq [a, b]\\) denote the set of \\(B\\)-smooth integers in the interval \\([a, b]\\). Observe that the set of integers in \\(K(a, b)\\) divisible by a fixed prime \\(p\\) is in bijection with the set \\(K(a/p, b/p)\\)."}),e.jsxs("p",{children:["By the principle of inclusion-exclusion (PIE), the number \\(M\\) of integers in \\(K(N, N+L)\\) which are not divisible by any \\(p \\in [B_0, B_1]\\) is",String.raw`\[
+            \begin{aligned}
+                M = \, &|K(N, N+L)| \\
+                &- \sum_{B_0 \leq p \leq B_1} |K(N/p, (N+L)/p)| \\
+                &+ \sum_{B_0 \leq p_1 < p_2 \leq B_1} |K(N/(p_1 p_2), (N+L)/(p_1 p_2))| \\
+                &- \cdots
+                \end{aligned}
+            \]`,"Recall that \\(K(a, b) \\sim (b-a) \\, \\rho(\\ln(a)/\\ln(B))\\) for intervals with \\(b-a \\ll a\\), where \\(\\rho\\) is the Dickman-de Brujin function. We therefore have",String.raw`\[
+            \begin{aligned}
+                \frac{M}{L} \sim \, &\rho(\ln{N}/\ln{B}) \\
+                &- \sum_{B_0 \leq p \leq B_1} \rho\left(\frac{\ln{N} - \ln{p}}{\ln{B}}\right) \\
+                &+ \sum_{B_0 \leq p_1 < p_2 \leq B_1} \rho\left(\frac{\ln{N} - \ln{p_1} - \ln{p_2}}{\ln{B}}\right) \\
+                &- \cdots
+                \end{aligned}
+            \]`,"Using the heuristic measure",String.raw`\[\mathbb{1}_{\text{primes}} \sim \frac{dx}{x \ln{x}} \sim \frac{du}{u}\]`,"where ",String.raw`\(u := \ln{x}\)`,", we may write",String.raw`\[
+            \begin{aligned}
+                \frac{M}{L} \sim \, &\rho(\ln{N}/\ln{B}) \\
+                &- \int_{\ln{B_0}}^{\ln{B_1}} \frac{1}{u} \, \rho\left(\frac{\ln{N} - u}{\ln{B}}\right) \dd{u} \\
+                &+ \frac{1}{2!} \int_{\ln{B_0}}^{\ln{B_1}} \int_{\ln{B_0}}^{\ln{B_1}} \frac{1}{uv} \, \rho\left(\frac{\ln{N} - u - v}{\ln{B}}\right) \dd{u} \dd{v} \\
+                &- \cdots
+                \end{aligned}
+            \]`,"This is a bit unwieldy, and the multidimensional integrals are difficult to compute numerically. Luckily, it's possible to simplify this quite a bit."]}),e.jsx("h2",{children:"Simplification"}),e.jsxs("p",{children:["Recursively define the helper function",String.raw`\[
+                I_0(x) := \rho(x/\ln{B}),
+            \]
+            \[
+                I_n(x) := \frac{1}{n} \int_{\ln{B_0}}^{\ln{B_1}} \frac{I_{n-1}(x-u)}{u} \, \dd{u}.
+            \]`,"Then we have the much nicer expression",String.raw`\[
+                \mathbb{P}(\text{clean and }B\text{-smooth}) := \frac{M}{L} = \sum_{n=0}^\infty (-1)^n \, I_n(\ln{N}),
+            \]`,"where I have defined ",e.jsx("i",{children:"clean"})," to be the property of having no prime factors in the interval \\([B_0, B_1]\\), and ",e.jsx("i",{children:"smooth"})," to mean \\(B\\)-smooth."]}),e.jsxs("p",{children:["The functions \\(I_n\\) are easily computed iteratively over \\(n\\), by keeping track of all values over the interval ",String.raw`\(-1 < x \leq \ln{N}\)`,". To obtain correct results, it is important to use the convention \\(\\rho(x) = 0\\) for ",String.raw`\(x < 0\)`," to remain consistent with the original formula from PIE."]}),e.jsxs("p",{children:["Finally, we get the desired conditional probability",String.raw`\[
+                \mathbb{P}(B\text{-smooth} \, | \, \text{clean}) = \frac{\mathbb{P}(\text{clean and }B\text{-smooth})}{\mathbb{P}(\text{clean and }\infty\text{-smooth})},
+            \]`,"where both the numerator and denominator can be computed using the formula above.",e.jsx(n,{id:1})]}),e.jsx("h2",{children:"Numerical Computation"}),e.jsxs("p",{children:["The below plot shows the quantities ",String.raw`\(\mathbb{P}(B\text{-smooth})\)`,", ",String.raw`\(\mathbb{P}(\text{clean})\)`,", and ",String.raw`\(\mathbb{P}(\text{clean and }B\text{-smooth})\)`," for concrete values ",String.raw`\((B_0, B_1, B) = 2^{20}, 2^{32}, 2^{37}\)`,"."]}),e.jsx(t,{desktopSource:r,mobileSource:r,alt:"Graph showing probabilities of being B-smooth and/or clean as a function of log(N)."}),e.jsx("p",{children:"Note that the slight wiggles in the purple curve are real and not numerical artifacts!"}),e.jsxs("p",{children:["As \\(N \\to \\infty\\), the probability ",String.raw`\(\mathbb{P}(\text{clean})\)`," tends towards the value ",String.raw`\(\ln{B_0}/\ln{B_1}\)`,". This is consistent with Mertens’ third theorem."]}),e.jsx("p",{children:"From the above curves, we can also compute the conditional probability of interest. As expected, the probability of a clean integer being \\(B\\)-smooth is lower than that of a generic integer."}),e.jsx(t,{desktopSource:a,mobileSource:a,alt:"Graph showing conditional probability of being B-smooth given clean as a function of log(N)."}),e.jsxs("p",{children:["Finally, we can experimentally generate clean integers",e.jsx(n,{id:2})," and plot the probability of being \\(B\\)-smooth for various values of \\(B\\), and compare against the theoretical reference."]}),e.jsx(t,{desktopSource:o,mobileSource:o,alt:"Experimental results agree very well with theoretical prediction."}),e.jsx("p",{children:"We get excellent agreement, even down to the subtle wiggles in the theoretical prediction."}),e.jsxs(s,{children:[e.jsxs(i,{id:1,children:["Note that ",e.jsx("b",{children:"all"})," integers are \\(\\infty\\)-smooth."]}),e.jsx(i,{id:2,children:"This can be done efficiently using a sieve over primes \\(p \\in [B_0, B_1]\\) and removing the sieved part. The remaining cofactors are all clean values of \\(N\\)."})]})]})}export{c as default};
+//# sourceMappingURL=body-BdhMCMoS.js.map
